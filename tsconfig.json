@@ -24,7 +24,7 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["./components/*"],
-      "@types/*": ["./types/*"]
+      "@types": ["./types/index.d.ts"]
     }
   },
   "include": ["src"],
