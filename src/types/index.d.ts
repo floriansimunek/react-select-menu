@@ -6,3 +6,7 @@ export type ItemProps = {
 export type ListProps = {
   children: React.ReactElement<ItemProps> | React.ReactElement<ItemProps>[];
 };
+
+export type InputProps = {
+  placeholder?: string;
+};
