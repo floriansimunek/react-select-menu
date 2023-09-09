@@ -10,3 +10,7 @@ export type ListProps = {
 export type InputProps = {
   placeholder?: string;
 };
+
+export type LabelProps = {
+  children: string;
+};
