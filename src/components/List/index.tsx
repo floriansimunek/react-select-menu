@@ -1,4 +1,6 @@
-const List = ({ children }) => {
+import { ListProps } from '@types';
+
+const List: React.FC<ListProps> = ({ children }) => {
   return (
     <div>
       <ul>{children}</ul>
