@@ -1,5 +1,6 @@
 export type ItemProps = {
   children: ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   value: string | number;
 };
 
@@ -8,7 +9,9 @@ export type MenuProps = {
 };
 
 export type InputProps = {
+  value?: string;
   placeholder?: string;
+  onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
 };
 
 export type LabelProps = {

@@ -12,7 +12,7 @@
 }
 
 /* OPEN */
-.select__menu.open {
+.select__menu[data-rsm-is-open='true'] {
   .select__menu--menu {
     display: block;
   }
