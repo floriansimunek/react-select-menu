@@ -14,3 +14,11 @@ export type InputProps = {
 export type LabelProps = {
   children: string;
 };
+
+export type SelectProps = {
+  options: Option[];
+};
+
+export type Option = {
+  value: string;
+};
