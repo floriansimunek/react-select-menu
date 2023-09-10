@@ -1,7 +1,12 @@
 import { InputProps } from '@types';
 import './index.scss';
 
-const Input: React.FC<InputProps> = ({ value, placeholder, onClick }) => {
+const Input: React.FC<InputProps> = ({
+  value,
+  placeholder,
+  onClick,
+  onChange,
+}) => {
   return (
     <input
       type="text"
@@ -9,7 +14,7 @@ const Input: React.FC<InputProps> = ({ value, placeholder, onClick }) => {
       placeholder={placeholder}
       className="select__menu--input"
       onClick={onClick}
-      readOnly
+      onChange={onChange}
     />
   );
 };
