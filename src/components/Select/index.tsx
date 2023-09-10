@@ -1,15 +1,18 @@
-import Label from '@components/Label';
 import Input from '@components/Input';
-import Menu from '@components/Menu';
 import Item from '@components/Item';
+import Label from '@components/Label';
+import Menu from '@components/Menu';
 import { SelectProps } from '@types';
+import { useState } from 'react';
 import './index.scss';
 
 const Select: React.FC<SelectProps> = ({ options }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
-    <div className="select__menu">
+    <div className={`select__menu`} data-rsm-is-open={isOpen}>
       <Label>Label</Label>
-      <Input placeholder="placeholder" />
+      <Input placeholder="placeholder" onClick={() => setIsOpen(!isOpen)} />
       <Menu>
         {options.map((option) => (
           <Item key={option.value} value={option.value}>

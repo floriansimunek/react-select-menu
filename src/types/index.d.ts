@@ -9,6 +9,7 @@ export type MenuProps = {
 
 export type InputProps = {
   placeholder?: string;
+  onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
 };
 
 export type LabelProps = {
