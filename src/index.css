@@ -1,3 +1,8 @@
+:root {
+  --dark: darkslategray;
+  --primary-color: #4f46e5;
+}
+
 * {
   margin: 0;
   padding: 0;
