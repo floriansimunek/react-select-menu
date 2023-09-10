@@ -7,14 +7,7 @@ function App() {
     { value: 'Option 2' },
   ];
 
-  return (
-    <Select
-      options={options}
-      onChange={() => {
-        console.log('ok');
-      }}
-    />
-  );
+  return <Select options={options} />;
 }
 
 export default App;

@@ -1,8 +1,14 @@
-.select__menu--item {
-  padding: 0.25rem 0.5rem;
+li {
+  &.select__menu--item {
+    padding: 0.25rem 0.5rem;
 
-  &:hover {
-    background-color: var(--primary-color);
-    color: white;
+    &:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+  }
+
+  &:not(.select__menu--item) {
+    padding: 0.25rem 0.5rem;
   }
 }

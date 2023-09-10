@@ -2,13 +2,14 @@ import Input from '@components/Input';
 import Item from '@components/Item';
 import Label from '@components/Label';
 import Menu from '@components/Menu';
-import { SelectProps } from '@types';
+import { Option, SelectProps } from '@types';
 import { useEffect, useState } from 'react';
 import './index.scss';
 
 const Select: React.FC<SelectProps> = ({ options, onChange }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selected, setSelected] = useState<string>('');
+  const [filtered, setFiltered] = useState<Option[]>(options);
 
   useEffect(() => {
     const handleClickOutside = (e: Event) => {
@@ -22,6 +23,18 @@ const Select: React.FC<SelectProps> = ({ options, onChange }) => {
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isOpen]);
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target?.value;
+    setSelected(inputValue);
+    setIsOpen(true);
+    setFiltered(
+      options.filter((option) =>
+        option.value.toLowerCase().includes(inputValue.toLowerCase()),
+      ),
+    );
+    onChange && onChange();
+  };
+
   return (
     <div className={`select__menu`} data-rsm-is-open={isOpen}>
       <Label>Label</Label>
@@ -29,14 +42,10 @@ const Select: React.FC<SelectProps> = ({ options, onChange }) => {
         value={selected}
         placeholder="placeholder"
         onClick={() => setIsOpen(!isOpen)}
-        onChange={(e) => {
-          setSelected(e.target.value);
-          setIsOpen(true);
-          onChange();
-        }}
+        onChange={(e) => handleInputChange(e)}
       />
-      <Menu>
-        {options.map((option) => (
+      <Menu isEmpty={filtered.length === 0}>
+        {filtered.map((option) => (
           <Item
             key={option.value}
             value={option.value}

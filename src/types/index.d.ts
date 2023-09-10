@@ -6,6 +6,7 @@ export type ItemProps = {
 
 export type MenuProps = {
   children: React.ReactElement<ItemProps> | React.ReactElement<ItemProps>[];
+  isEmpty?: boolean;
 };
 
 export type InputProps = {
