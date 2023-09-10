@@ -2,4 +2,8 @@
   color: var(--dark);
   border: 1px solid var(--dark);
   padding: 0.25rem 0.5rem;
+
+  &:focus {
+    outline: 1px solid var(--primary-color);
+  }
 }
