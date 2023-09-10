@@ -9,3 +9,10 @@
     list-style: none;
   }
 }
+
+/* OPEN */
+.select__menu.open {
+  .select__menu--menu {
+    display: block;
+  }
+}
