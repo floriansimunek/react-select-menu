@@ -3,7 +3,7 @@ export type ItemProps = {
   value: string | number;
 };
 
-export type ListProps = {
+export type MenuProps = {
   children: React.ReactElement<ItemProps> | React.ReactElement<ItemProps>[];
 };
 
