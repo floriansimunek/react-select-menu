@@ -8,14 +8,23 @@ import './index.scss';
 
 const Select: React.FC<SelectProps> = ({ options }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selected, setSelected] = useState<string | undefined>(undefined);
 
   return (
     <div className={`select__menu`} data-rsm-is-open={isOpen}>
       <Label>Label</Label>
-      <Input placeholder="placeholder" onClick={() => setIsOpen(!isOpen)} />
+      <Input
+        value={selected}
+        placeholder="placeholder"
+        onClick={() => setIsOpen(!isOpen)}
+      />
       <Menu>
         {options.map((option) => (
-          <Item key={option.value} value={option.value}>
+          <Item
+            key={option.value}
+            value={option.value}
+            onClick={() => setSelected(option.value)}
+          >
             {option.value}
           </Item>
         ))}
