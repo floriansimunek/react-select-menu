@@ -1,0 +1,11 @@
+.select__menu {
+  &--menu {
+    border: 1px solid;
+    padding: 5px 0;
+    display: none;
+  }
+
+  &--list {
+    list-style: none;
+  }
+}
