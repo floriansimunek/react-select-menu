@@ -1,4 +1,5 @@
 import { InputProps } from '@types';
+import './index.scss';
 
 const Input: React.FC<InputProps> = ({ placeholder }) => {
   const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
@@ -11,6 +12,7 @@ const Input: React.FC<InputProps> = ({ placeholder }) => {
     <input
       type="text"
       placeholder={placeholder}
+      className="select__menu--input"
       onClick={(e) => handleClick(e)}
     />
   );
