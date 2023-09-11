@@ -34,5 +34,14 @@ describe('SelectMenu', () => {
       const menu = screen.getByTestId('select__menu--menu');
       expect(menu).toBeInTheDocument();
     });
+
+    it('should render item', () => {
+      const items = screen.getAllByTestId('select__menu--item');
+      expect(items.length).toBe(3);
+
+      items.map((item) => {
+        expect(item).toBeInTheDocument();
+      });
+    });
   });
 });
