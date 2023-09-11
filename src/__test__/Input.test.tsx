@@ -15,7 +15,7 @@ describe('SelectMenu', () => {
       render(<Select options={options} />);
     });
 
-    it('should open the menu', async () => {
+    it('should open the menu', () => {
       const input = screen.getByTestId('select__menu--input');
       const selectMenu = screen.getByTestId('select__menu');
 
