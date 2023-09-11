@@ -6,7 +6,7 @@ import { SelectProps } from '@types';
 import { useEffect, useState } from 'react';
 import './index.scss';
 
-const Select: React.FC<SelectProps> = ({ options }) => {
+const Select: React.FC<SelectProps> = ({ options, isDisabled }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selected, setSelected] = useState<string>('');
 
@@ -33,6 +33,7 @@ const Select: React.FC<SelectProps> = ({ options }) => {
         value={selected}
         placeholder="placeholder"
         onClick={() => setIsOpen(!isOpen)}
+        isDisabled={isDisabled}
       />
       <Menu>
         {options.map((option) => (

@@ -12,6 +12,7 @@ export type InputProps = {
   value?: string;
   placeholder?: string;
   onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
+  isDisabled?: boolean;
 };
 
 export type LabelProps = {
@@ -20,6 +21,7 @@ export type LabelProps = {
 
 export type SelectProps = {
   options: Option[];
+  isDisabled?: boolean;
 };
 
 export type Option = {
