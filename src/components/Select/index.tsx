@@ -23,7 +23,11 @@ const Select: React.FC<SelectProps> = ({ options }) => {
   }, [isOpen]);
 
   return (
-    <div className={`select__menu`} data-rsm-is-open={isOpen}>
+    <div
+      className={`select__menu`}
+      data-rsm-is-open={isOpen}
+      data-testid="select__menu"
+    >
       <Label>Label</Label>
       <Input
         value={selected}

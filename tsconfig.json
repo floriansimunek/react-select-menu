@@ -25,7 +25,9 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@types": ["./types/index.d.ts"]
-    }
+    },
+
+    "esModuleInterop": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

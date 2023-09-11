@@ -3,7 +3,7 @@ import './index.scss';
 
 const Menu: React.FC<MenuProps> = ({ children }) => {
   return (
-    <div className="select__menu--menu">
+    <div className="select__menu--menu" data-testid="select__menu--menu">
       <ul className="select__menu--list">{children}</ul>
     </div>
   );
