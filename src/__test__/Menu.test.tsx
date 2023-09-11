@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { act, render, screen } from '@testing-library/react';
 
 describe('SelectMenu', () => {
-  describe('When input is clicked', () => {
+  describe('When menu is open', () => {
     beforeEach(() => {
       document.body.innerHTML = '';
 
@@ -15,14 +15,14 @@ describe('SelectMenu', () => {
       render(<Select options={options} />);
     });
 
-    it('should open the menu', () => {
+    it('should close the menu on outside click', () => {
       const input = screen.getByTestId('select__menu--input');
       const selectMenu = screen.getByTestId('select__menu');
 
       expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('false');
       act(() => input.click());
       expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('true');
-      act(() => input.click());
+      act(() => document.body.click());
       expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('false');
     });
   });
