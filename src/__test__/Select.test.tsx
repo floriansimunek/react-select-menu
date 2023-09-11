@@ -24,5 +24,10 @@ describe('SelectMenu', () => {
       const label = screen.getByTestId('select__menu--label');
       expect(label).toBeInTheDocument();
     });
+
+    it('should render input', () => {
+      const input = screen.getByTestId('select__menu--input');
+      expect(input).toBeInTheDocument();
+    });
   });
 });
