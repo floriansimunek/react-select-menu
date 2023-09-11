@@ -7,7 +7,7 @@ function App() {
     { value: 'Option 2' },
   ];
 
-  return <Select options={options} isDisabled />;
+  return <Select options={options} />;
 }
 
 export default App;

@@ -3,19 +3,19 @@ import '@testing-library/jest-dom';
 import { act, render, screen } from '@testing-library/react';
 
 describe('SelectMenu', () => {
+  const options = [
+    { value: 'Option 0' },
+    { value: 'Option 1' },
+    { value: 'Option 2' },
+  ];
+
+  beforeEach(() => {
+    document.body.innerHTML = '';
+  });
+
   describe('When input is clicked', () => {
-    beforeEach(() => {
-      document.body.innerHTML = '';
-
-      const options = [
-        { value: 'Option 0' },
-        { value: 'Option 1' },
-        { value: 'Option 2' },
-      ];
-      render(<Select options={options} />);
-    });
-
     it('should open the menu', () => {
+      render(<Select options={options} />);
       const input = screen.getByTestId('select__menu--input');
       const selectMenu = screen.getByTestId('select__menu');
 
@@ -24,6 +24,15 @@ describe('SelectMenu', () => {
       expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('true');
       act(() => input.click());
       expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('false');
+    });
+  });
+
+  describe('When SelectMenu has isDisabled prop', () => {
+    it('should disable the input', () => {
+      render(<Select options={options} isDisabled />);
+      const input = screen.getByTestId('select__menu--input');
+      expect(input).toBeDisabled();
+      expect(input).toHaveStyle({ opacity: 0.5 });
     });
   });
 });
