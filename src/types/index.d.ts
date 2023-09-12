@@ -22,6 +22,7 @@ export type LabelProps = {
 export type SelectProps = {
   options: Option[];
   isDisabled?: boolean;
+  placeholder?: string;
 };
 
 export type Option = {
