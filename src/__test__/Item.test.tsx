@@ -24,5 +24,15 @@ describe('SelectMenu', () => {
         expect(input.value).toEqual(item.getAttribute('data-rsm-value'));
       });
     });
+
+    it('should close the menu', () => {
+      const items = screen.getAllByTestId('select__menu--item');
+      const selectMenu = screen.getByTestId('select__menu');
+
+      items.map((item) => {
+        act(() => item.click());
+        expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('false');
+      });
+    });
   });
 });
