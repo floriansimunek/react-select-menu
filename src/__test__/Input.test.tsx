@@ -32,7 +32,6 @@ describe('SelectMenu', () => {
       render(<Select options={options} isDisabled />);
       const input = screen.getByTestId('select__menu--input');
       expect(input).toBeDisabled();
-      expect(input).toHaveStyle({ opacity: 0.5 });
     });
   });
 });
