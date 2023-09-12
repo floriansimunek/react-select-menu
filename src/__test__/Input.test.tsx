@@ -34,4 +34,12 @@ describe('SelectMenu', () => {
       expect(input).toBeDisabled();
     });
   });
+
+  describe('When SelectMenu has placeholder prop', () => {
+    it('should add placeholder to the input', () => {
+      render(<Select options={options} placeholder="Test" />);
+      const input = screen.getByTestId('select__menu--input');
+      expect(input.getAttribute('placeholder')).toEqual('Test');
+    });
+  });
 });
