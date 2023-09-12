@@ -40,7 +40,10 @@ const Select: React.FC<SelectProps> = ({ options, isDisabled }) => {
           <Item
             key={option.value}
             value={option.value}
-            onClick={() => setSelected(option.value)}
+            onClick={() => {
+              setSelected(option.value);
+              setIsOpen(false);
+            }}
           >
             {option.value}
           </Item>
