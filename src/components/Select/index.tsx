@@ -6,7 +6,11 @@ import { SelectProps } from '@types';
 import { useEffect, useState } from 'react';
 import './index.scss';
 
-const Select: React.FC<SelectProps> = ({ options, isDisabled }) => {
+const Select: React.FC<SelectProps> = ({
+  options,
+  isDisabled,
+  placeholder,
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selected, setSelected] = useState<string>('');
 
@@ -31,7 +35,7 @@ const Select: React.FC<SelectProps> = ({ options, isDisabled }) => {
       <Label>Label</Label>
       <Input
         value={selected}
-        placeholder="placeholder"
+        placeholder={placeholder}
         onClick={() => setIsOpen(!isOpen)}
         isDisabled={isDisabled}
       />
