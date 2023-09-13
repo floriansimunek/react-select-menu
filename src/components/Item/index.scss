@@ -1,8 +1,12 @@
 .select__menu--item {
   padding: 0.25rem 0.5rem;
 
-  &:hover {
+  &:not([data-rsm-item-is-disabled]):hover {
     background-color: var(--primary-color);
     color: white;
+  }
+
+  &[data-rsm-item-is-disabled] {
+    opacity: 0.5;
   }
 }

@@ -1,15 +1,16 @@
 import { ItemProps } from '@types';
 import './index.scss';
 
-const Item: React.FC<ItemProps> = ({ children, onClick, value }) => {
+const Item: React.FC<ItemProps> = ({ onClick, option }) => {
   return (
     <li
       className="select__menu--item"
       onClick={onClick}
       data-testid="select__menu--item"
-      data-rsm-value={value}
+      data-rsm-value={option.value}
+      data-rsm-item-is-disabled={option.isDisabled}
     >
-      {children}
+      {option.value}
     </li>
   );
 };
