@@ -69,7 +69,7 @@ const Select: React.FC<SelectProps> = ({
       {label && <Label htmlFor={'rsm-' + id}>{label}</Label>}
       <Input
         id={'rsm-' + id}
-        value={selected || defaultValue}
+        value={selected || defaultValue || ''}
         placeholder={placeholder}
         onClick={() => setIsOpen(!isOpen)}
         isDisabled={isDisabled}
