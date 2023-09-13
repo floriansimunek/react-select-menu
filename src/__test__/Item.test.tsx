@@ -20,8 +20,10 @@ describe('SelectMenu', () => {
       const input: HTMLInputElement = screen.getByTestId('select__menu--input');
 
       items.map((item) => {
-        act(() => item.click());
-        expect(input.value).toEqual(item.getAttribute('data-rsm-value'));
+        if (!item.getAttribute('data-rsm-item-is-disabled')) {
+          act(() => item.click());
+          expect(input.value).toEqual(item.getAttribute('data-rsm-value'));
+        }
       });
     });
 
@@ -40,7 +42,6 @@ describe('SelectMenu', () => {
   describe('When item is disabled', () => {
     it('should have a data attribute', () => {
       render(<Select id="id" options={options} />);
-      screen.debug();
       options.forEach((option) => {
         if (option.isDisabled) {
           const disabledItem = screen.getByText(option.value);
