@@ -28,12 +28,16 @@ function App() {
   return (
     <Select
       id="id"
-      className="class1 class2 class3"
-      defaultValue={options?.[3]?.options?.[0]?.value}
       options={options}
+      className="class1 class2 class3"
+      style={{
+        select: {
+          width: '500px',
+        },
+      }}
+      defaultValue={options?.[3]?.options?.[0]?.value}
       placeholder="Placeholder"
       label="Label"
-      offset={{ top: 100, left: 50 }}
     />
   );
 }

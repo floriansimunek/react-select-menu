@@ -10,6 +10,7 @@ import './index.scss';
 const Select: React.FC<SelectProps> = ({
   id,
   options,
+  style,
   className,
   defaultValue,
   placeholder,
@@ -53,6 +54,7 @@ const Select: React.FC<SelectProps> = ({
         key={option.value}
         option={option}
         onClick={() => handleItemClick(option)}
+        style={{ ...style?.item }}
       />
     );
   };
@@ -69,6 +71,7 @@ const Select: React.FC<SelectProps> = ({
       className={`select__menu ${className}`}
       data-rsm-is-open={isOpen}
       data-testid="select__menu"
+      style={{ ...style?.select }}
     >
       {label && <Label htmlFor={'rsm-' + id}>{label}</Label>}
       <Input
@@ -76,9 +79,16 @@ const Select: React.FC<SelectProps> = ({
         value={selected || defaultValue || ''}
         placeholder={placeholder}
         onClick={() => setIsOpen(!isOpen)}
+        style={{ ...style?.input }}
         isDisabled={isDisabled}
       />
-      <Menu offset={offset}>{renderList(options)}</Menu>
+      <Menu
+        offset={offset}
+        menuStyle={{ ...style?.menu }}
+        listStyle={{ ...style?.list }}
+      >
+        {renderList(options)}
+      </Menu>
     </div>
   );
 };
