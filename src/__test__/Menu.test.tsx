@@ -12,7 +12,7 @@ describe('SelectMenu', () => {
         { value: 'Option 1' },
         { value: 'Option 2' },
       ];
-      render(<Select options={options} />);
+      render(<Select id="id" options={options} />);
     });
 
     it('should close the menu on outside click', () => {

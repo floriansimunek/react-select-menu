@@ -30,7 +30,7 @@ describe('SelectMenu', () => {
           ],
         },
       ];
-      render(<Select options={options} label="Label" />);
+      render(<Select id="id" options={options} label="Label" />);
     });
 
     it('should render menu', () => {
@@ -42,11 +42,13 @@ describe('SelectMenu', () => {
       const label = screen.getByTestId('select__menu--label');
       expect(label).toBeInTheDocument();
       expect(label.textContent).toBe('Label');
+      expect(label.getAttribute('for')).toBe('rsm-id');
     });
 
     it('should render input', () => {
       const input = screen.getByTestId('select__menu--input');
       expect(input).toBeInTheDocument();
+      expect(input.id).toBe('rsm-id');
     });
 
     it('should render menu', () => {
