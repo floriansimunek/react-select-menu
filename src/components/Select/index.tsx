@@ -51,15 +51,17 @@ const Select: React.FC<SelectProps> = ({
     return (
       <Item
         key={option.value}
-        value={option.value}
-        onClick={() => {
-          setSelected(option.value);
-          setIsOpen(false);
-        }}
-      >
-        {option.value}
-      </Item>
+        option={option}
+        onClick={() => handleItemClick(option)}
+      />
     );
+  };
+
+  const handleItemClick = (option: Option) => {
+    if (!option.isDisabled) {
+      setSelected(option.value);
+      setIsOpen(false);
+    }
   };
 
   return (
