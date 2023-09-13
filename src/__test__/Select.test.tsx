@@ -30,12 +30,20 @@ describe('SelectMenu', () => {
           ],
         },
       ];
-      render(<Select id="id" options={options} label="Label" />);
+      render(
+        <Select
+          id="id"
+          options={options}
+          label="Label"
+          className="test-class"
+        />,
+      );
     });
 
     it('should render menu', () => {
       const selectMenu = screen.getByTestId('select__menu');
       expect(selectMenu).toBeInTheDocument();
+      expect(selectMenu).toHaveClass('test-class');
     });
 
     it('should render label', () => {
