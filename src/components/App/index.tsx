@@ -32,6 +32,7 @@ function App() {
       options={options}
       placeholder="Placeholder"
       label="Label"
+      offset={{ top: 100, left: 50 }}
     />
   );
 }

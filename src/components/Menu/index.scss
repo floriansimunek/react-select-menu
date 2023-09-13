@@ -1,13 +1,14 @@
 .select__menu {
   &--menu {
     border: 1px solid;
-    margin-top: 5px;
-    padding: 5px 0;
+    position: absolute;
+    top: calc(100% + 5px + var(--offset-top));
+    left: var(--offset-left);
+    width: 100%;
     display: none;
   }
 
   &--list {
-    list-style: none;
     font-size: 1rem;
   }
 }
