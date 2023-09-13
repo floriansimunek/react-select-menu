@@ -1,11 +1,14 @@
 export type ItemProps = {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   option: Option;
+  style?: CSSProperties;
 };
 
 export type MenuProps = {
   children: React.ReactElement<ItemProps> | React.ReactElement<ItemProps>[];
   offset?: { top?: number; left?: number };
+  menuStyle?: CSSProperties;
+  listStyle?: CSSProperties;
 };
 
 export type InputProps = {
@@ -13,6 +16,7 @@ export type InputProps = {
   value?: string;
   placeholder?: string;
   onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
+  style?: CSSProperties;
   isDisabled?: boolean;
 };
 
@@ -29,6 +33,13 @@ export type SelectProps = {
   id: string;
   options: (Option | Group)[];
   className?: string;
+  style?: {
+    select?: CSSProperties;
+    input?: CSSProperties;
+    menu?: CSSProperties;
+    list?: CSSProperties;
+    item?: CSSProperties;
+  };
   defaultValue?: string;
   placeholder?: string;
   label?: string;
