@@ -9,8 +9,9 @@ import './index.scss';
 
 const Select: React.FC<SelectProps> = ({
   id,
-  defaultValue,
   options,
+  className,
+  defaultValue,
   placeholder,
   label,
   offset,
@@ -63,7 +64,7 @@ const Select: React.FC<SelectProps> = ({
 
   return (
     <div
-      className={`select__menu`}
+      className={`select__menu ${className}`}
       data-rsm-is-open={isOpen}
       data-testid="select__menu"
     >
