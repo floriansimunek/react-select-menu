@@ -9,8 +9,9 @@ import './index.scss';
 
 const Select: React.FC<SelectProps> = ({
   options,
-  isDisabled,
   placeholder,
+  label,
+  isDisabled,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selected, setSelected] = useState<string>('');
@@ -63,7 +64,7 @@ const Select: React.FC<SelectProps> = ({
       data-rsm-is-open={isOpen}
       data-testid="select__menu"
     >
-      <Label>Label</Label>
+      {label && <Label>{label}</Label>}
       <Input
         value={selected}
         placeholder={placeholder}

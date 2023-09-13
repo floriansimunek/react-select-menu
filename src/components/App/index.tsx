@@ -25,7 +25,7 @@ function App() {
     },
   ];
 
-  return <Select options={options} placeholder="Placeholder" />;
+  return <Select options={options} placeholder="Placeholder" label="Label" />;
 }
 
 export default App;
