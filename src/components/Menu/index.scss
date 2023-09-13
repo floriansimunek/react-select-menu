@@ -2,8 +2,8 @@
   &--menu {
     border: 1px solid;
     position: absolute;
-    top: calc(100% + 5px);
-    left: 0;
+    top: calc(100% + 5px + var(--offset-top));
+    left: var(--offset-left);
     width: 100%;
     display: none;
   }

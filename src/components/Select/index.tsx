@@ -13,6 +13,7 @@ const Select: React.FC<SelectProps> = ({
   options,
   placeholder,
   label,
+  offset,
   isDisabled,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -74,7 +75,7 @@ const Select: React.FC<SelectProps> = ({
         onClick={() => setIsOpen(!isOpen)}
         isDisabled={isDisabled}
       />
-      <Menu>{renderList(options)}</Menu>
+      <Menu offset={offset}>{renderList(options)}</Menu>
     </div>
   );
 };
