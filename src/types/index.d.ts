@@ -19,12 +19,21 @@ export type LabelProps = {
   children: string;
 };
 
+export type GLabelProps = {
+  option: Group;
+};
+
 export type SelectProps = {
-  options: Option[];
+  options: (Option | Group)[];
   isDisabled?: boolean;
   placeholder?: string;
 };
 
 export type Option = {
   value: string;
+};
+
+export type Group = {
+  label: string;
+  options?: Option[];
 };
