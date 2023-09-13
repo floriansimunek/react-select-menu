@@ -28,6 +28,7 @@ function App() {
   return (
     <Select
       id="id"
+      className="class1 class2 class3"
       defaultValue={options?.[3]?.options?.[0]?.value}
       options={options}
       placeholder="Placeholder"
