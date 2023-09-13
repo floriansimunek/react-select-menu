@@ -52,5 +52,19 @@ describe('SelectMenu', () => {
         }
       });
     });
+
+    it('should not be clickable', () => {
+      render(<Select id="id" options={options} />);
+      const items = screen.getAllByTestId('select__menu--item');
+      const input: HTMLInputElement = screen.getByTestId('select__menu--input');
+      const inputValue = input.value;
+
+      items.map((item) => {
+        if (item.getAttribute('data-rsm-item-is-disabled')) {
+          act(() => item.click());
+          expect(input.value).toEqual(inputValue);
+        }
+      });
+    });
   });
 });
