@@ -6,6 +6,7 @@ export type ItemProps = {
 
 export type MenuProps = {
   children: React.ReactElement<ItemProps> | React.ReactElement<ItemProps>[];
+  offset?: { top?: number; left?: number };
 };
 
 export type InputProps = {
@@ -31,6 +32,7 @@ export type SelectProps = {
   defaultValue?: string;
   placeholder?: string;
   label?: string;
+  offset?: { top?: number; left?: number };
   isDisabled?: boolean;
 };
 
