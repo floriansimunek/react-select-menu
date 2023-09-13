@@ -19,7 +19,11 @@ const Menu: React.FC<MenuProps> = ({
         } as React.CSSProperties
       }
     >
-      <ul className="select__menu--list" style={{ ...listStyle }}>
+      <ul
+        className="select__menu--list"
+        data-testid="select__menu--list"
+        style={{ ...listStyle }}
+      >
         {children}
       </ul>
     </div>
