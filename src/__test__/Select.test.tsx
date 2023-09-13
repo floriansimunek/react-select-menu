@@ -3,33 +3,51 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
 describe('SelectMenu', () => {
+  const options = [
+    { value: 'Option 0' },
+    { value: 'Option 1' },
+    { value: 'Option 2' },
+    {
+      label: 'Group 1',
+      options: [
+        { value: 'Option 3' },
+        { value: 'Option 4' },
+        { value: 'Option 5' },
+      ],
+    },
+    {
+      label: 'Group 2',
+      options: [
+        { value: 'Option 6' },
+        { value: 'Option 7' },
+        { value: 'Option 8' },
+        { value: 'Option 9' },
+        { value: 'Option 10' },
+      ],
+    },
+  ];
+
+  const style = {
+    select: {
+      color: 'red',
+    },
+    input: {
+      color: 'blue',
+    },
+    menu: {
+      backgroundColor: 'green',
+    },
+    list: {
+      backgroundColor: 'yellow',
+    },
+    item: {
+      fontSize: '2rem',
+    },
+  };
+
   describe('When component called', () => {
     beforeEach(() => {
       document.body.innerHTML = '';
-
-      const options = [
-        { value: 'Option 0' },
-        { value: 'Option 1' },
-        { value: 'Option 2' },
-        {
-          label: 'Group 1',
-          options: [
-            { value: 'Option 3' },
-            { value: 'Option 4' },
-            { value: 'Option 5' },
-          ],
-        },
-        {
-          label: 'Group 2',
-          options: [
-            { value: 'Option 6' },
-            { value: 'Option 7' },
-            { value: 'Option 8' },
-            { value: 'Option 9' },
-            { value: 'Option 10' },
-          ],
-        },
-      ];
       render(
         <Select
           id="id"
@@ -74,6 +92,41 @@ describe('SelectMenu', () => {
 
       const groupLabels = screen.getAllByTestId('select__menu--group-label');
       expect(groupLabels.length).toBe(2);
+    });
+  });
+
+  describe('When component called with style prop', () => {
+    beforeEach(() => {
+      document.body.innerHTML = '';
+      render(<Select id="id" options={options} style={{ ...style }} />);
+    });
+
+    it('it should add style to SelectMenu', () => {
+      const selectMenu = screen.getByTestId('select__menu');
+      expect(selectMenu).toHaveStyle('color: red');
+    });
+
+    it('it should add style to input', () => {
+      const input = screen.getByTestId('select__menu--input');
+      expect(input).toHaveStyle('color: blue');
+    });
+
+    it('it should add style to menu', () => {
+      const menu = screen.getByTestId('select__menu--menu');
+      expect(menu).toHaveStyle('background-color: green');
+    });
+
+    it('it should add style to list', () => {
+      const list = screen.getByTestId('select__menu--list');
+      expect(list).toHaveStyle('background-color: yellow');
+    });
+
+    it('it should add style to item', () => {
+      const items = screen.getAllByTestId('select__menu--item');
+
+      items.map((item) => {
+        expect(item).toHaveStyle('font-size: 2rem');
+      });
     });
   });
 });
