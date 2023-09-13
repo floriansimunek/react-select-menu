@@ -1,7 +1,6 @@
 export type ItemProps = {
-  children: ReactNode;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
-  value: string | number;
+  option: Option;
 };
 
 export type MenuProps = {
@@ -39,6 +38,7 @@ export type SelectProps = {
 
 export type Option = {
   value: string;
+  isDisabled?: boolean;
 };
 
 export type Group = {
