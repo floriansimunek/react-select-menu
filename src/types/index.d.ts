@@ -9,6 +9,7 @@ export type MenuProps = {
 };
 
 export type InputProps = {
+  id: string;
   value?: string;
   placeholder?: string;
   onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
@@ -17,6 +18,7 @@ export type InputProps = {
 
 export type LabelProps = {
   children: string;
+  htmlFor: string;
 };
 
 export type GLabelProps = {
@@ -24,6 +26,7 @@ export type GLabelProps = {
 };
 
 export type SelectProps = {
+  id: string;
   options: (Option | Group)[];
   placeholder?: string;
   label?: string;

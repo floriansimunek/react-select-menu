@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import './index.scss';
 
 const Select: React.FC<SelectProps> = ({
+  id,
   options,
   placeholder,
   label,
@@ -64,8 +65,9 @@ const Select: React.FC<SelectProps> = ({
       data-rsm-is-open={isOpen}
       data-testid="select__menu"
     >
-      {label && <Label>{label}</Label>}
+      {label && <Label htmlFor={'rsm-' + id}>{label}</Label>}
       <Input
+        id={'rsm-' + id}
         value={selected}
         placeholder={placeholder}
         onClick={() => setIsOpen(!isOpen)}
