@@ -28,6 +28,7 @@ export type GLabelProps = {
 export type SelectProps = {
   id: string;
   options: (Option | Group)[];
+  defaultValue?: string;
   placeholder?: string;
   label?: string;
   isDisabled?: boolean;

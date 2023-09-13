@@ -26,7 +26,13 @@ function App() {
   ];
 
   return (
-    <Select id="id" options={options} placeholder="Placeholder" label="Label" />
+    <Select
+      id="id"
+      defaultValue={options?.[3]?.options?.[0]?.value}
+      options={options}
+      placeholder="Placeholder"
+      label="Label"
+    />
   );
 }
 

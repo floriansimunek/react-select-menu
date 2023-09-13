@@ -42,4 +42,18 @@ describe('SelectMenu', () => {
       expect(input.getAttribute('placeholder')).toEqual('Test');
     });
   });
+
+  describe('When SelectMenu has defaultValue prop', () => {
+    it('should be the input value', () => {
+      render(<Select id="id" options={options} defaultValue="Option 0" />);
+      const input: HTMLInputElement = screen.getByTestId('select__menu--input');
+      const items = screen.getAllByTestId('select__menu--item');
+
+      expect(input.value).toEqual('Option 0');
+      items.map((item) => {
+        act(() => item.click());
+        expect(input.value).toEqual(item.getAttribute('data-rsm-value'));
+      });
+    });
+  });
 });
