@@ -30,7 +30,7 @@ describe('SelectMenu', () => {
           ],
         },
       ];
-      render(<Select options={options} />);
+      render(<Select options={options} label="Label" />);
     });
 
     it('should render menu', () => {
@@ -41,6 +41,7 @@ describe('SelectMenu', () => {
     it('should render label', () => {
       const label = screen.getByTestId('select__menu--label');
       expect(label).toBeInTheDocument();
+      expect(label.textContent).toBe('Label');
     });
 
     it('should render input', () => {
