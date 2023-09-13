@@ -15,7 +15,7 @@ describe('SelectMenu', () => {
 
   describe('When input is clicked', () => {
     it('should open the menu', () => {
-      render(<Select options={options} />);
+      render(<Select id="id" options={options} />);
       const input = screen.getByTestId('select__menu--input');
       const selectMenu = screen.getByTestId('select__menu');
 
@@ -29,7 +29,7 @@ describe('SelectMenu', () => {
 
   describe('When SelectMenu has isDisabled prop', () => {
     it('should disable the input', () => {
-      render(<Select options={options} isDisabled />);
+      render(<Select id="id" options={options} isDisabled />);
       const input = screen.getByTestId('select__menu--input');
       expect(input).toBeDisabled();
     });
@@ -37,7 +37,7 @@ describe('SelectMenu', () => {
 
   describe('When SelectMenu has placeholder prop', () => {
     it('should add placeholder to the input', () => {
-      render(<Select options={options} placeholder="Test" />);
+      render(<Select id="id" options={options} placeholder="Test" />);
       const input = screen.getByTestId('select__menu--input');
       expect(input.getAttribute('placeholder')).toEqual('Test');
     });

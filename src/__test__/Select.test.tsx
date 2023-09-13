@@ -30,7 +30,7 @@ describe('SelectMenu', () => {
           ],
         },
       ];
-      render(<Select options={options} label="Label" />);
+      render(<Select id="id" options={options} label="Label" />);
     });
 
     it('should render menu', () => {
