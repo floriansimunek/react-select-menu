@@ -42,11 +42,13 @@ describe('SelectMenu', () => {
       const label = screen.getByTestId('select__menu--label');
       expect(label).toBeInTheDocument();
       expect(label.textContent).toBe('Label');
+      expect(label.getAttribute('for')).toBe('rsm-id');
     });
 
     it('should render input', () => {
       const input = screen.getByTestId('select__menu--input');
       expect(input).toBeInTheDocument();
+      expect(input.id).toBe('rsm-id');
     });
 
     it('should render menu', () => {
