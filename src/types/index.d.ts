@@ -25,8 +25,9 @@ export type GLabelProps = {
 
 export type SelectProps = {
   options: (Option | Group)[];
-  isDisabled?: boolean;
   placeholder?: string;
+  label?: string;
+  isDisabled?: boolean;
 };
 
 export type Option = {
