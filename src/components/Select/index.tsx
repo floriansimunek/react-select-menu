@@ -1,3 +1,4 @@
+import ChevronIcon from '@components/ChevronIcon';
 import GroupLabel from '@components/GroupLabel';
 import Input from '@components/Input';
 import Item from '@components/Item';
@@ -6,13 +7,12 @@ import Menu from '@components/Menu';
 import { Group, Option, SelectProps } from '@types';
 import { useEffect, useState } from 'react';
 import './index.scss';
-import ChevronIcon from '@components/ChevronIcon';
 
 const Select: React.FC<SelectProps> = ({
   id,
   options,
   style,
-  className,
+  className = '',
   defaultValue,
   placeholder,
   label,
