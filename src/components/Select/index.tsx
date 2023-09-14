@@ -90,7 +90,7 @@ const Select: React.FC<SelectProps> = ({
           isDisabled={isDisabled}
         />
         <div className="select__menu--indicators">
-          <CloseIcon />
+          {isClearable && !!selected && <CloseIcon />}
           <div className="select__menu--indicators-separator"></div>
           <ChevronIcon />
         </div>
