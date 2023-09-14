@@ -15,6 +15,7 @@ export type InputProps = {
   id: string;
   value?: string;
   placeholder?: string;
+  onChange?: (event: React.ChangeEvent<HTMLElement>) => void;
   style?: CSSProperties;
   isDisabled?: boolean;
   isSearchable?: boolean;
