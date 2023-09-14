@@ -20,6 +20,7 @@ const Select: React.FC<SelectProps> = ({
   offset,
   isDisabled,
   isClearable,
+  isSearchable,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -95,6 +96,7 @@ const Select: React.FC<SelectProps> = ({
           placeholder={placeholder}
           style={{ ...style?.input }}
           isDisabled={isDisabled}
+          isSearchable={isSearchable}
         />
         <div className="select__menu--indicators">
           {isClearable && !!selected && (

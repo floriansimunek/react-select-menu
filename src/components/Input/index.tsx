@@ -7,6 +7,7 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   style,
   isDisabled,
+  isSearchable,
 }) => {
   return (
     <input
@@ -17,7 +18,7 @@ const Input: React.FC<InputProps> = ({
       className="select__menu--input"
       data-testid="select__menu--input"
       style={{ ...style }}
-      readOnly
+      readOnly={!isSearchable}
       disabled={isDisabled}
     />
   );
