@@ -1,6 +1,6 @@
 import Select from '@components/Select';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 
 describe('SelectMenu', () => {
   const options = [
@@ -127,6 +127,22 @@ describe('SelectMenu', () => {
       items.map((item) => {
         expect(item).toHaveStyle('font-size: 2rem');
       });
+    });
+  });
+
+  describe('When clicking the container', () => {
+    beforeEach(() => {
+      document.body.innerHTML = '';
+      render(<Select id="id" options={options} />);
+    });
+
+    it('should be focused', () => {
+      const container = screen.getByTestId('select__menu--container');
+      expect(container).toHaveAttribute('data-rsm-is-focused');
+      act(() => container.click());
+      expect(container.getAttribute('data-rsm-is-focused')).toBe('true');
+      act(() => document.body.click());
+      expect(container.getAttribute('data-rsm-is-focused')).toBe('false');
     });
   });
 });

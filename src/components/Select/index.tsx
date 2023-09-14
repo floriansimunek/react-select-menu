@@ -83,6 +83,7 @@ const Select: React.FC<SelectProps> = ({
         className="select__menu--container"
         tabIndex={0}
         data-rsm-is-focused={isFocused}
+        data-testid="select__menu--container"
         onClick={() => {
           setIsOpen(!isOpen);
           setIsFocused(true);
