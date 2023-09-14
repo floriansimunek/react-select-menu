@@ -140,6 +140,7 @@ const Select: React.FC<SelectProps> = ({
             <CloseIcon
               onClick={() => {
                 setSelected('');
+                setFiltered(options);
                 setIsOpen(false);
               }}
             />
