@@ -97,7 +97,11 @@ const Select: React.FC<SelectProps> = ({
       })
       .filter(Boolean);
 
-    setFiltered(filtered as (Option | Group)[]);
+    if (filtered.length === 0) {
+      setFiltered([{ value: 'No options found.' }]);
+    } else {
+      setFiltered(filtered as (Option | Group)[]);
+    }
   };
 
   return (
