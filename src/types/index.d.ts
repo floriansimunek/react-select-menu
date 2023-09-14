@@ -15,7 +15,6 @@ export type InputProps = {
   id: string;
   value?: string;
   placeholder?: string;
-  onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
   style?: CSSProperties;
   isDisabled?: boolean;
 };
