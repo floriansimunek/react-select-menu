@@ -47,6 +47,10 @@ export type SelectProps = {
   isClearable?: boolean;
 };
 
+export type CloseIconProps = {
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+};
+
 export type Option = {
   value: string;
   isDisabled?: boolean;
