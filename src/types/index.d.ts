@@ -44,6 +44,7 @@ export type SelectProps = {
   label?: string;
   offset?: { top?: number; left?: number };
   isDisabled?: boolean;
+  isClearable?: boolean;
 };
 
 export type Option = {
