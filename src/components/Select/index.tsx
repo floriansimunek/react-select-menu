@@ -1,4 +1,5 @@
 import ChevronIcon from '@components/ChevronIcon';
+import CloseIcon from '@components/CloseIcon';
 import GroupLabel from '@components/GroupLabel';
 import Input from '@components/Input';
 import Item from '@components/Item';
@@ -18,6 +19,7 @@ const Select: React.FC<SelectProps> = ({
   label,
   offset,
   isDisabled,
+  isClearable,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selected, setSelected] = useState<string>('');
@@ -87,7 +89,18 @@ const Select: React.FC<SelectProps> = ({
           style={{ ...style?.input }}
           isDisabled={isDisabled}
         />
-        <ChevronIcon />
+        <div className="select__menu--indicators">
+          {isClearable && !!selected && (
+            <CloseIcon
+              onClick={() => {
+                setSelected('');
+                setIsOpen(false);
+              }}
+            />
+          )}
+          <div className="select__menu--indicators-separator"></div>
+          <ChevronIcon />
+        </div>
       </div>
       <Menu
         offset={offset}

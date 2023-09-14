@@ -44,6 +44,11 @@ export type SelectProps = {
   label?: string;
   offset?: { top?: number; left?: number };
   isDisabled?: boolean;
+  isClearable?: boolean;
+};
+
+export type CloseIconProps = {
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 };
 
 export type Option = {
