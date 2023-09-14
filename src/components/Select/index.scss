@@ -19,7 +19,7 @@
     justify-content: space-between;
     align-items: center;
 
-    &:focus {
+    &[data-rsm-is-focused='true'] {
       outline: 1px solid var(--primary-color);
     }
 

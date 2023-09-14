@@ -22,19 +22,21 @@ const Select: React.FC<SelectProps> = ({
   isClearable,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isFocused, setIsFocused] = useState<boolean>(false);
   const [selected, setSelected] = useState<string>('');
 
   useEffect(() => {
     const handleClickOutside = (e: Event) => {
       const target = e.target as HTMLElement;
-      if (isOpen && !target.closest('.select__menu')) {
+      if (!target.closest('.select__menu')) {
         setIsOpen(false);
+        setIsFocused(false);
       }
     };
 
-    isOpen && document.addEventListener('click', handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
-  }, [isOpen]);
+  }, []);
 
   const renderList = (options: (Option | Group)[]) => {
     return options.map((option) => {
@@ -80,7 +82,11 @@ const Select: React.FC<SelectProps> = ({
       <div
         className="select__menu--container"
         tabIndex={0}
-        onClick={() => setIsOpen(!isOpen)}
+        data-rsm-is-focused={isFocused}
+        onClick={() => {
+          setIsOpen(!isOpen);
+          setIsFocused(true);
+        }}
       >
         <Input
           id={'rsm-' + id}
