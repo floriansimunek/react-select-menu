@@ -6,7 +6,9 @@
     color: white;
   }
 
-  &[data-rsm-item-is-disabled] {
+  &[data-rsm-item-is-disabled='true'] {
     opacity: 0.5;
+    user-select: none;
+    pointer-events: none;
   }
 }
