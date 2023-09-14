@@ -29,13 +29,11 @@ function App() {
     <Select
       id="id"
       options={options}
-      className="class1 class2 class3"
       style={{
         select: {
           width: '500px',
         },
       }}
-      defaultValue={options?.[3]?.options?.[0]?.value}
       placeholder="Placeholder"
       label="Label"
     />

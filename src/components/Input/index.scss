@@ -1,11 +1,15 @@
 .select__menu--input {
-  color: var(--dark);
-  border: 1px solid var(--dark);
-  padding: 0.25rem 0.5rem;
+  width: 100%;
+  padding: 0.25rem 0.5rem 0.25rem 0rem;
   font-size: 1rem;
+  border: none;
 
   &:focus {
-    outline: 1px solid var(--primary-color);
+    outline: none;
+  }
+
+  &:hover {
+    cursor: default;
   }
 
   &:disabled {
