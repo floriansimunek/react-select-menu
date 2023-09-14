@@ -10,4 +10,34 @@
   ul {
     list-style: none;
   }
+
+  &--container {
+    width: 100%;
+    color: var(--dark);
+    border: 1px solid var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+
+    &:focus {
+      outline: 1px solid var(--primary-color);
+    }
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  .select__menu--icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* OPEN */
+.select__menu[data-rsm-is-open='true'] {
+  .select__menu--icon-chevron {
+    transform: rotate(180deg);
+  }
 }

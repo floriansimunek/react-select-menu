@@ -6,6 +6,7 @@ import Menu from '@components/Menu';
 import { Group, Option, SelectProps } from '@types';
 import { useEffect, useState } from 'react';
 import './index.scss';
+import ChevronIcon from '@components/ChevronIcon';
 
 const Select: React.FC<SelectProps> = ({
   id,
@@ -74,14 +75,20 @@ const Select: React.FC<SelectProps> = ({
       style={{ ...style?.select }}
     >
       {label && <Label htmlFor={'rsm-' + id}>{label}</Label>}
-      <Input
-        id={'rsm-' + id}
-        value={selected || defaultValue || ''}
-        placeholder={placeholder}
+      <div
+        className="select__menu--container"
+        tabIndex={0}
         onClick={() => setIsOpen(!isOpen)}
-        style={{ ...style?.input }}
-        isDisabled={isDisabled}
-      />
+      >
+        <Input
+          id={'rsm-' + id}
+          value={selected || defaultValue || ''}
+          placeholder={placeholder}
+          style={{ ...style?.input }}
+          isDisabled={isDisabled}
+        />
+        <ChevronIcon />
+      </div>
       <Menu
         offset={offset}
         menuStyle={{ ...style?.menu }}

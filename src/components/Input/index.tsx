@@ -5,7 +5,6 @@ const Input: React.FC<InputProps> = ({
   id,
   value,
   placeholder,
-  onClick,
   style,
   isDisabled,
 }) => {
@@ -17,7 +16,6 @@ const Input: React.FC<InputProps> = ({
       placeholder={placeholder}
       className="select__menu--input"
       data-testid="select__menu--input"
-      onClick={onClick}
       style={{ ...style }}
       readOnly
       disabled={isDisabled}
