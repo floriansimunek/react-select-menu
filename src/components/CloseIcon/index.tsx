@@ -1,6 +1,8 @@
-const closeIcon: React.FC = () => {
+import { CloseIconProps } from '@types';
+
+const closeIcon: React.FC<CloseIconProps> = ({ onClick }) => {
   return (
-    <div className="select__menu--icon-container">
+    <div className="select__menu--icon-container" onClick={onClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"

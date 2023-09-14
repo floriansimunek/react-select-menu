@@ -90,7 +90,14 @@ const Select: React.FC<SelectProps> = ({
           isDisabled={isDisabled}
         />
         <div className="select__menu--indicators">
-          {isClearable && !!selected && <CloseIcon />}
+          {isClearable && !!selected && (
+            <CloseIcon
+              onClick={() => {
+                setSelected('');
+                setIsOpen(false);
+              }}
+            />
+          )}
           <div className="select__menu--indicators-separator"></div>
           <ChevronIcon />
         </div>
