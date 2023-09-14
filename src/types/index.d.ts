@@ -17,6 +17,7 @@ export type InputProps = {
   placeholder?: string;
   style?: CSSProperties;
   isDisabled?: boolean;
+  isSearchable?: boolean;
 };
 
 export type LabelProps = {
@@ -45,6 +46,7 @@ export type SelectProps = {
   offset?: { top?: number; left?: number };
   isDisabled?: boolean;
   isClearable?: boolean;
+  isSearchable?: boolean;
 };
 
 export type CloseIconProps = {
