@@ -57,6 +57,7 @@ export type CloseIconProps = {
 export type Option = {
   value: string;
   isDisabled?: boolean;
+  isVisible?: boolean;
 };
 
 export type Group = {
