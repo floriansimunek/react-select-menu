@@ -94,6 +94,10 @@ const Select: React.FC<SelectProps> = ({
           id={'rsm-' + id}
           value={selected || defaultValue || ''}
           placeholder={placeholder}
+          onChange={(e) => {
+            const inputValue = e.target as HTMLInputElement;
+            setSelected(inputValue.value);
+          }}
           style={{ ...style?.input }}
           isDisabled={isDisabled}
           isSearchable={isSearchable}
