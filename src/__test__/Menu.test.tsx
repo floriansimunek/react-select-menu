@@ -36,4 +36,14 @@ describe('SelectMenu', () => {
       expect(menu).toHaveStyle('--offset-top: 100px; --offset-left: 50px;');
     });
   });
+
+  describe('When menu has isForcedOpen prop', () => {
+    it('should be always open', () => {
+      render(<Select id="id" options={options} isForcedOpen />);
+      const selectmenu = screen.getByTestId('select__menu');
+      expect(selectmenu.getAttribute('data-rsm-is-open')).toBe('true');
+      act(() => document.body.click());
+      expect(selectmenu.getAttribute('data-rsm-is-open')).toBe('true');
+    });
+  });
 });

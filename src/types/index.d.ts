@@ -48,6 +48,7 @@ export type SelectProps = {
   isDisabled?: boolean;
   isClearable?: boolean;
   isSearchable?: boolean;
+  isForcedOpen?: boolean;
   onChange?: () => void;
   onClose?: () => void;
   onCreate?: () => void;

@@ -18,9 +18,10 @@ const Select: React.FC<SelectProps> = ({
   placeholder,
   label,
   offset,
-  isDisabled,
-  isClearable,
-  isSearchable,
+  isDisabled = false,
+  isClearable = false,
+  isSearchable = false,
+  isForcedOpen = false,
   onChange,
   onClose,
   onCreate,
@@ -36,18 +37,19 @@ const Select: React.FC<SelectProps> = ({
 
   useEffect(() => {
     onCreate && onCreate();
+    isForcedOpen ? setIsOpen(isForcedOpen) : setIsOpen(false);
 
     const handleClickOutside = (e: Event) => {
       const target = e.target as HTMLElement;
       if (!target.closest('.select__menu')) {
-        setIsOpen(false);
+        isForcedOpen ? setIsOpen(isForcedOpen) : setIsOpen(false);
         setIsFocused(false);
       }
     };
 
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
-  }, [onCreate]);
+  }, [onCreate, isForcedOpen]);
 
   useEffect(() => {
     if (isOpen === false && isClicked) {
@@ -97,7 +99,7 @@ const Select: React.FC<SelectProps> = ({
   const handleItemClick = (option: Option) => {
     if (!option.isDisabled) {
       setSelected(option.value);
-      setIsOpen(false);
+      isForcedOpen ? setIsOpen(isForcedOpen) : setIsOpen(false);
     }
   };
 
@@ -146,7 +148,7 @@ const Select: React.FC<SelectProps> = ({
         data-rsm-is-focused={isFocused}
         data-testid="select__menu--container"
         onClick={() => {
-          setIsOpen(!isOpen);
+          isForcedOpen ? setIsOpen(isForcedOpen) : setIsOpen(!isOpen);
           setIsFocused(true);
           if (!isClicked) {
             setIsClicked(true);
@@ -163,7 +165,7 @@ const Select: React.FC<SelectProps> = ({
             setSelected(input.value);
             filterOptions(input.value);
             if (!isOpen) {
-              setIsOpen(true);
+              isForcedOpen ? setIsOpen(isForcedOpen) : setIsOpen(true);
             }
             onChange && onChange();
           }}
@@ -177,7 +179,7 @@ const Select: React.FC<SelectProps> = ({
               onClick={() => {
                 setSelected('');
                 setFiltered(options);
-                setIsOpen(false);
+                isForcedOpen ? setIsOpen(isForcedOpen) : setIsOpen(false);
               }}
             />
           )}
