@@ -25,6 +25,7 @@ const Select: React.FC<SelectProps> = ({
   onClose,
   onCreate,
   onFocus,
+  onOpen,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -51,7 +52,11 @@ const Select: React.FC<SelectProps> = ({
     if (isOpen === false && isClicked) {
       onClose && onClose();
     }
-  }, [isClicked, isOpen, onClose]);
+
+    if (isOpen && isClicked) {
+      onOpen && onOpen();
+    }
+  }, [isClicked, isOpen, onClose, onOpen]);
 
   useEffect(() => {
     if (isFocused) {
