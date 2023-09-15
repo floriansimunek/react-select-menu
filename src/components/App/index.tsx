@@ -38,9 +38,6 @@ function App() {
       label="Label"
       isClearable
       isSearchable
-      onChange={() => {
-        console.log('onChange');
-      }}
     />
   );
 }
