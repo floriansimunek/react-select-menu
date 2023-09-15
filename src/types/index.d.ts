@@ -52,6 +52,7 @@ export type SelectProps = {
   onClose?: () => void;
   onCreate?: () => void;
   onFocus?: () => void;
+  onOpen?: () => void;
 };
 
 export type CloseIconProps = {

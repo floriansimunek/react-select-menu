@@ -186,5 +186,18 @@ describe('SelectMenu', () => {
       act(() => container.focus());
       expect(fn).toBeCalledTimes(1);
     });
+
+    it('should trigger onOpen callback', () => {
+      const fn = jest.fn();
+      render(<Select id="id" options={options} onOpen={fn} />);
+      const container = screen.getByTestId('select__menu--container');
+
+      expect(fn).toBeCalledTimes(0);
+      act(() => container.click());
+      expect(fn).toBeCalledTimes(1);
+      act(() => container.click());
+      act(() => container.click());
+      expect(fn).toBeCalledTimes(2);
+    });
   });
 });
