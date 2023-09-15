@@ -72,6 +72,7 @@ function App() {
 | isDisabled   | no       | false     | boolean  | [Click](#isDisabled)   |
 | isClearable  | no       | false     | boolean  | [Click](#isClearable)  |
 | isSearchable | no       | false     | boolean  | [Click](#isSearchable) |
+| isForcedOpen | no       | false     | boolean  | [Click](#isForcedOpen) |
 | onChange     | no       | undefined | function | [Click](#onchange)     |
 | onClose      | no       | undefined | function | [Click](#onclose)      |
 | onCreate     | no       | undefined | function | [Click](#oncreate)     |
@@ -202,6 +203,14 @@ const customOffset = {
 
 ```js
 <Select id="id" options={options} isSearchable />
+```
+
+### isForcedOpen
+
+`isForcedOpen` tell that the menu is always open
+
+```js
+<Select id="id" options={options} isForcedOpen />
 ```
 
 ### onChange
