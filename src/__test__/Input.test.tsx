@@ -93,4 +93,24 @@ describe('SelectMenu', () => {
       expect(filteredOptions).toHaveLength(2);
     });
   });
+
+  describe('When SelectMenu has isClearable prop', () => {
+    it('should render the closeIcon', () => {
+      render(
+        <Select
+          id="id"
+          options={options}
+          defaultValue="Option 0"
+          isClearable
+        />,
+      );
+      let closeIcon = screen.queryByTestId('select__menu--icon-close');
+      const input: HTMLInputElement = screen.getByTestId('select__menu--input');
+
+      expect(closeIcon).toBeNull();
+      fireEvent.change(input, { target: { value: 'test' } });
+      closeIcon = screen.queryByTestId('select__menu--icon-close');
+      expect(closeIcon).toBeInTheDocument();
+    });
+  });
 });
