@@ -92,5 +92,17 @@ describe('SelectMenu', () => {
       });
       expect(filteredOptions).toHaveLength(2);
     });
+
+    it('should trigger onChange callback', () => {
+      const handleOnChange = jest.fn();
+      render(<Select id="id" options={options} onChange={handleOnChange} />);
+      const input: HTMLInputElement = screen.getByTestId('select__menu--input');
+
+      for (let i = 0; i < 10; i++) {
+        fireEvent.change(input, { target: { value: i } });
+      }
+
+      expect(handleOnChange).toBeCalledTimes(10);
+    });
   });
 });
