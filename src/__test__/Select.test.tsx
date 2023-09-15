@@ -1,6 +1,6 @@
 import Select from '@components/Select';
 import '@testing-library/jest-dom';
-import { act, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 
 describe('SelectMenu', () => {
   const options = [
@@ -143,6 +143,38 @@ describe('SelectMenu', () => {
       expect(container.getAttribute('data-rsm-is-focused')).toBe('true');
       act(() => document.body.click());
       expect(container.getAttribute('data-rsm-is-focused')).toBe('false');
+    });
+  });
+
+  describe('When SelectMenu is called with callbacks', () => {
+    it('should trigger onChange callback', () => {
+      const fn = jest.fn();
+      render(<Select id="id" options={options} onChange={fn} />);
+      const input: HTMLInputElement = screen.getByTestId('select__menu--input');
+
+      for (let i = 0; i < 10; i++) {
+        fireEvent.change(input, { target: { value: i } });
+      }
+
+      expect(fn).toBeCalledTimes(10);
+    });
+
+    it('should trigger onClose callback', () => {
+      const fn = jest.fn();
+      render(<Select id="id" options={options} onClose={fn} />);
+      const container = screen.getByTestId('select__menu--container');
+
+      expect(fn).toBeCalledTimes(0);
+      act(() => container.click());
+      expect(fn).toBeCalledTimes(0);
+      act(() => container.click());
+      expect(fn).toBeCalledTimes(1);
+    });
+
+    it('should trigger onCreate callback', () => {
+      const fn = jest.fn();
+      render(<Select id="id" options={options} onCreate={fn} />);
+      expect(fn).toBeCalledTimes(1);
     });
   });
 });
