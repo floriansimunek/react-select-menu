@@ -199,5 +199,19 @@ describe('SelectMenu', () => {
       act(() => container.click());
       expect(fn).toBeCalledTimes(2);
     });
+
+    it('should trigger onSelect callback', () => {
+      const fn = jest.fn();
+      render(<Select id="id" options={options} onOpen={fn} />);
+      const items = screen.getAllByTestId('select__menu--item');
+      const container = screen.getByTestId('select__menu--container');
+
+      items.map((item) => {
+        act(() => container.click());
+        act(() => item.click());
+      });
+
+      expect(fn).toBeCalledTimes(11);
+    });
   });
 });

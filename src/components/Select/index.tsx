@@ -26,6 +26,7 @@ const Select: React.FC<SelectProps> = ({
   onCreate,
   onFocus,
   onOpen,
+  onSelect,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -84,7 +85,10 @@ const Select: React.FC<SelectProps> = ({
       <Item
         key={option.value}
         option={option}
-        onClick={() => handleItemClick(option)}
+        onClick={() => {
+          handleItemClick(option);
+          onSelect && onSelect();
+        }}
         style={{ ...style?.item }}
       />
     );
