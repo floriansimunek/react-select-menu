@@ -24,6 +24,7 @@ const Select: React.FC<SelectProps> = ({
   onChange,
   onClose,
   onCreate,
+  onFocus,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -51,6 +52,12 @@ const Select: React.FC<SelectProps> = ({
       onClose && onClose();
     }
   }, [isClicked, isOpen, onClose]);
+
+  useEffect(() => {
+    if (isFocused) {
+      onFocus && onFocus();
+    }
+  }, [isFocused, onFocus]);
 
   const renderList = (options: (Option | Group)[]) => {
     return options.map((option) => {
@@ -136,6 +143,7 @@ const Select: React.FC<SelectProps> = ({
             setIsClicked(true);
           }
         }}
+        onFocus={() => setIsFocused(true)}
       >
         <Input
           id={'rsm-' + id}
