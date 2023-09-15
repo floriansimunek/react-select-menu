@@ -21,6 +21,7 @@ const Select: React.FC<SelectProps> = ({
   isDisabled,
   isClearable,
   isSearchable,
+  onChange,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -130,6 +131,7 @@ const Select: React.FC<SelectProps> = ({
             const input = e.target as HTMLInputElement;
             setSelected(input.value);
             filterOptions(input.value);
+            onChange && onChange();
           }}
           style={{ ...style?.input }}
           isDisabled={isDisabled}
