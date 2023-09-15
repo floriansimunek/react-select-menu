@@ -5,8 +5,10 @@ const Input: React.FC<InputProps> = ({
   id,
   value,
   placeholder,
+  onChange,
   style,
   isDisabled,
+  isSearchable,
 }) => {
   return (
     <input
@@ -14,10 +16,11 @@ const Input: React.FC<InputProps> = ({
       id={id}
       value={value}
       placeholder={placeholder}
+      onChange={onChange}
       className="select__menu--input"
       data-testid="select__menu--input"
       style={{ ...style }}
-      readOnly
+      readOnly={!isSearchable}
       disabled={isDisabled}
     />
   );

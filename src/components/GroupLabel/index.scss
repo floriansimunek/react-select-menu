@@ -10,3 +10,7 @@
   align-items: center;
   user-select: none;
 }
+
+ul.select__menu--list > ul:first-child > .select__menu--group-label {
+  margin-top: 0;
+}

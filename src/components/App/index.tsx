@@ -37,6 +37,7 @@ function App() {
       placeholder="Placeholder"
       label="Label"
       isClearable
+      isSearchable
     />
   );
 }

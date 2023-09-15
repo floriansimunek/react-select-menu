@@ -15,8 +15,10 @@ export type InputProps = {
   id: string;
   value?: string;
   placeholder?: string;
+  onChange?: (event: React.ChangeEvent<HTMLElement>) => void;
   style?: CSSProperties;
   isDisabled?: boolean;
+  isSearchable?: boolean;
 };
 
 export type LabelProps = {
@@ -45,6 +47,7 @@ export type SelectProps = {
   offset?: { top?: number; left?: number };
   isDisabled?: boolean;
   isClearable?: boolean;
+  isSearchable?: boolean;
 };
 
 export type CloseIconProps = {
@@ -54,6 +57,7 @@ export type CloseIconProps = {
 export type Option = {
   value: string;
   isDisabled?: boolean;
+  isVisible?: boolean;
 };
 
 export type Group = {

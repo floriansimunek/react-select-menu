@@ -1,6 +1,6 @@
 import Select from '@components/Select';
 import '@testing-library/jest-dom';
-import { act, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 
 describe('SelectMenu', () => {
   const options = [
@@ -54,6 +54,43 @@ describe('SelectMenu', () => {
         act(() => item.click());
         expect(input.value).toEqual(item.getAttribute('data-rsm-value'));
       });
+    });
+  });
+
+  describe('When input change', () => {
+    it('should be the input value', () => {
+      render(<Select id="id" options={options} />);
+      const input: HTMLInputElement = screen.getByTestId('select__menu--input');
+
+      fireEvent.change(input, { target: { value: 'Option 10' } });
+      expect(input.value).toEqual('Option 10');
+    });
+
+    it('should filter options', () => {
+      const options = [
+        { value: 'aOption 0' },
+        { value: 'aOption 1' },
+        { value: 'Option 2' },
+      ];
+      render(<Select id="id" options={options} />);
+      const input: HTMLInputElement = screen.getByTestId('select__menu--input');
+
+      fireEvent.change(input, { target: { value: 'Option 1' } });
+
+      const filteredOption = screen.getByText('aOption 1');
+      const option2 = screen.queryByText('Option 2');
+      const option3 = screen.queryByText('Option 3');
+
+      expect(filteredOption).toBeInTheDocument();
+      expect(option2).toBeNull();
+      expect(option3).toBeNull();
+
+      fireEvent.change(input, { target: { value: 'aOption' } });
+
+      const filteredOptions = screen.getAllByText((content) => {
+        return content.includes('aOption');
+      });
+      expect(filteredOptions).toHaveLength(2);
     });
   });
 });
