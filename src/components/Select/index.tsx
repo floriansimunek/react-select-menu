@@ -162,6 +162,9 @@ const Select: React.FC<SelectProps> = ({
             const input = e.target as HTMLInputElement;
             setSelected(input.value);
             filterOptions(input.value);
+            if (!isOpen) {
+              setIsOpen(true);
+            }
             onChange && onChange();
           }}
           style={{ ...style?.input }}
