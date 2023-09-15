@@ -176,5 +176,15 @@ describe('SelectMenu', () => {
       render(<Select id="id" options={options} onCreate={fn} />);
       expect(fn).toBeCalledTimes(1);
     });
+
+    it('should trigger onFocus callback', () => {
+      const fn = jest.fn();
+      render(<Select id="id" options={options} onFocus={fn} />);
+
+      const container = screen.getByTestId('select__menu--container');
+      expect(fn).toBeCalledTimes(0);
+      act(() => container.focus());
+      expect(fn).toBeCalledTimes(1);
+    });
   });
 });
