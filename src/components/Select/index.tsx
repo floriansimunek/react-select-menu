@@ -22,6 +22,7 @@ const Select: React.FC<SelectProps> = ({
   isClearable,
   isSearchable,
   onChange,
+  onCreate,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -29,6 +30,8 @@ const Select: React.FC<SelectProps> = ({
   const [filtered, setFiltered] = useState<(Option | Group)[]>(options);
 
   useEffect(() => {
+    onCreate && onCreate();
+
     const handleClickOutside = (e: Event) => {
       const target = e.target as HTMLElement;
       if (!target.closest('.select__menu')) {
@@ -39,7 +42,7 @@ const Select: React.FC<SelectProps> = ({
 
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
-  }, []);
+  }, [onCreate]);
 
   const renderList = (options: (Option | Group)[]) => {
     return options.map((option) => {

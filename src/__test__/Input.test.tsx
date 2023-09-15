@@ -92,17 +92,25 @@ describe('SelectMenu', () => {
       });
       expect(filteredOptions).toHaveLength(2);
     });
+  });
 
+  describe('When SelectMenu is called with callbacks', () => {
     it('should trigger onChange callback', () => {
-      const handleOnChange = jest.fn();
-      render(<Select id="id" options={options} onChange={handleOnChange} />);
+      const fn = jest.fn();
+      render(<Select id="id" options={options} onChange={fn} />);
       const input: HTMLInputElement = screen.getByTestId('select__menu--input');
 
       for (let i = 0; i < 10; i++) {
         fireEvent.change(input, { target: { value: i } });
       }
 
-      expect(handleOnChange).toBeCalledTimes(10);
+      expect(fn).toBeCalledTimes(10);
+    });
+
+    it('should trigger onCreate callback', () => {
+      const fn = jest.fn();
+      render(<Select id="id" options={options} onCreate={fn} />);
+      expect(fn).toBeCalledTimes(1);
     });
   });
 });

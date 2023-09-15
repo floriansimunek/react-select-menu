@@ -49,6 +49,7 @@ export type SelectProps = {
   isClearable?: boolean;
   isSearchable?: boolean;
   onChange?: () => void;
+  onCreate?: () => void;
 };
 
 export type CloseIconProps = {
