@@ -22,12 +22,14 @@ const Select: React.FC<SelectProps> = ({
   isClearable,
   isSearchable,
   onChange,
+  onClose,
   onCreate,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [selected, setSelected] = useState<string>('');
   const [filtered, setFiltered] = useState<(Option | Group)[]>(options);
+  const [isClicked, setIsClicked] = useState<boolean>(false);
 
   useEffect(() => {
     onCreate && onCreate();
@@ -43,6 +45,12 @@ const Select: React.FC<SelectProps> = ({
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, [onCreate]);
+
+  useEffect(() => {
+    if (isOpen === false && isClicked) {
+      onClose && onClose();
+    }
+  }, [isClicked, isOpen, onClose]);
 
   const renderList = (options: (Option | Group)[]) => {
     return options.map((option) => {
@@ -124,6 +132,9 @@ const Select: React.FC<SelectProps> = ({
         onClick={() => {
           setIsOpen(!isOpen);
           setIsFocused(true);
+          if (!isClicked) {
+            setIsClicked(true);
+          }
         }}
       >
         <Input
