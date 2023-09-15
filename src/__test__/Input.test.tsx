@@ -1,3 +1,4 @@
+import CloseIcon from '@components/CloseIcon';
 import Select from '@components/Select';
 import '@testing-library/jest-dom';
 import { act, fireEvent, render, screen } from '@testing-library/react';
@@ -111,6 +112,29 @@ describe('SelectMenu', () => {
       fireEvent.change(input, { target: { value: 'test' } });
       closeIcon = screen.queryByTestId('select__menu--icon-close');
       expect(closeIcon).toBeInTheDocument();
+    });
+
+    it('should call onClick and trigger actions', () => {
+      const mockSetSelected = jest.fn();
+      const mockSetFiltered = jest.fn();
+      const mockSetIsOpen = jest.fn();
+
+      const { getByTestId } = render(
+        <CloseIcon
+          onClick={() => {
+            mockSetSelected('');
+            mockSetFiltered([]);
+            mockSetIsOpen(false);
+          }}
+        />,
+      );
+
+      const closeIcon = getByTestId('select__menu--icon-close');
+      fireEvent.click(closeIcon);
+
+      expect(mockSetSelected).toHaveBeenCalledWith('');
+      expect(mockSetFiltered).toHaveBeenCalledWith([]);
+      expect(mockSetIsOpen).toHaveBeenCalledWith(false);
     });
   });
 });
