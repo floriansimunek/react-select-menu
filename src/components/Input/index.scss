@@ -1,19 +1,21 @@
-.select__menu--input {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  color: var(--rsm-darkgray);
-  border: none;
+div.select__menu {
+  .select__menu--input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: var(--rsm-darkgray);
+    border: none;
 
-  &:focus {
-    outline: none;
-  }
+    &:focus {
+      outline: none;
+    }
 
-  &:hover {
-    cursor: default;
-  }
+    &:hover {
+      cursor: default;
+    }
 
-  &:disabled {
-    opacity: 0.5;
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 }
