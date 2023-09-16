@@ -1,9 +1,10 @@
 import react from '@vitejs/plugin-react';
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
+import dts from 'vite-plugin-dts';
 import tsConfigPaths from 'vite-tsconfig-paths';
+import * as packageJson from './package.json';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -29,7 +30,11 @@ export default defineConfig({
       fileName: (format) => `react-select-menu.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: [
+        ...Object.keys(packageJson.peerDependencies),
+        'react',
+        'react-dom',
+      ],
       output: { globals: { react: 'React' } },
     },
   },
