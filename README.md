@@ -7,13 +7,13 @@ Simple Select-Menu working with React
 Install react-select-menu with npm
 
 ```bash
-npm install react-select-menu
+npm i @fs/react-select-menu
 ```
 
 ## Usage/Examples
 
 ```js
-import SelectMenu from 'react-select-menu';
+import Select from '@fs/react-select-menu';
 
 function App() {
   const options = [
