@@ -1,14 +1,16 @@
-.select__menu--item {
-  padding: 0.25rem 0.5rem;
+div.select__menu {
+  .select__menu--item {
+    padding: 0.25rem 0.5rem;
 
-  &:not([data-rsm-item-is-disabled]):hover {
-    background-color: var(--rsm-primary-color);
-    color: white;
-  }
+    &:not([data-rsm-item-is-disabled]):hover {
+      background-color: var(--rsm-primary-color);
+      color: white;
+    }
 
-  &[data-rsm-item-is-disabled='true'] {
-    opacity: 0.5;
-    user-select: none;
-    pointer-events: none;
+    &[data-rsm-item-is-disabled='true'] {
+      opacity: 0.5;
+      user-select: none;
+      pointer-events: none;
+    }
   }
 }
