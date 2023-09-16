@@ -19,7 +19,7 @@ export { default as Input } from '@components/Input';
 export { default as Item } from '@components/Item';
 export { default as Label } from '@components/Label';
 export { default as Menu } from '@components/Menu';
-export default '@components/Select';
+export { default as Select } from '@components/Select';
 
 /* STYLES */
 import '@components/GroupLabel/index.scss';
