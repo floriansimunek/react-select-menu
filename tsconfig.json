@@ -24,7 +24,8 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["./components/*"],
-      "@types": ["./types/index.d.ts"]
+      "@types": ["./types/index.d.ts"],
+      "react-select-menu": ["src/components/index.ts"]
     },
 
     "esModuleInterop": true
