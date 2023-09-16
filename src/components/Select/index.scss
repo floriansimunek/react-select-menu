@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   width: fit-content;
-  color: var(--dark);
+  color: var(--rsm-darkgray);
   position: relative;
   user-select: none;
 
@@ -13,14 +13,14 @@
 
   &--container {
     width: 100%;
-    color: var(--dark);
-    border: 1px solid var(--dark);
+    color: var(--rsm-darkgray);
+    border: 1px solid var(--rsm-darkgray);
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     &[data-rsm-is-focused='true'] {
-      outline: 1px solid var(--primary-color);
+      outline: 1px solid var(--rsm-primary-color);
     }
 
     &:hover {
@@ -35,7 +35,7 @@
     align-self: stretch;
 
     &-separator {
-      background-color: var(--dark);
+      background-color: var(--rsm-darkgray);
       align-self: stretch;
       width: 1px;
       margin: 5px 0;

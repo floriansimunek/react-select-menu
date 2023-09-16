@@ -8,6 +8,7 @@ import Menu from '@components/Menu';
 import { Group, Option, SelectProps } from '@types';
 import { useEffect, useState } from 'react';
 import './index.scss';
+import '../index.css';
 
 const Select: React.FC<SelectProps> = ({
   id,
