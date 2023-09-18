@@ -8,7 +8,7 @@ Simple Select-Menu working with React
   - [Option Format](#option-format)
   - [Group Format](#group-format)
 - [Props](#props)
-  - [Examples](#propsexamples)
+  - [Examples](#props-examples)
 
 ## Installation
 
@@ -97,7 +97,6 @@ function App() {
 | onFocus       | no       | undefined | function | [Click](#onfocus)       |
 | onOpen        | no       | undefined | function | [Click](#onopen)        |
 | onSelect      | no       | undefined | function | [Click](#onselect)      |
-
 
 [Back to top](#react-select-menu)
 
