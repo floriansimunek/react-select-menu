@@ -59,26 +59,28 @@ function App() {
 
 ## Props
 
-| Name         | Required | Default   | Type     | Example                |
-| ------------ | -------- | --------- | -------- | ---------------------- |
-| id           | yes      | undefined | string   | [Click](#id)           |
-| options      | yes      | undefined | Array    | [Click](#options)      |
-| className    | no       | ''        | string   | [Click](#classname)    |
-| style        | no       | undefined | Object   | [Click](#style)        |
-| defaultValue | no       | undefined | string   | [Click](#defaultvalue) |
-| placeholder  | no       | undefined | string   | [Click](#placeholder)  |
-| label        | no       | undefined | string   | [Click](#label)        |
-| offset       | no       | undefined | Object   | [Click](#offset)       |
-| isDisabled   | no       | false     | boolean  | [Click](#isDisabled)   |
-| isClearable  | no       | false     | boolean  | [Click](#isClearable)  |
-| isSearchable | no       | false     | boolean  | [Click](#isSearchable) |
-| isForcedOpen | no       | false     | boolean  | [Click](#isForcedOpen) |
-| onChange     | no       | undefined | function | [Click](#onchange)     |
-| onClose      | no       | undefined | function | [Click](#onclose)      |
-| onCreate     | no       | undefined | function | [Click](#oncreate)     |
-| onFocus      | no       | undefined | function | [Click](#onfocus)      |
-| onOpen       | no       | undefined | function | [Click](#onopen)       |
-| onSelect     | no       | undefined | function | [Click](#onselect)     |
+| Name          | Required | Default   | Type     | Example                 |
+| ------------- | -------- | --------- | -------- | ----------------------- |
+| id            | yes      | undefined | string   | [Click](#id)            |
+| options       | yes      | undefined | Array    | [Click](#options)       |
+| className     | no       | ''        | string   | [Click](#classname)     |
+| style         | no       | undefined | Object   | [Click](#style)         |
+| defaultValue  | no       | undefined | string   | [Click](#defaultvalue)  |
+| placeholder   | no       | undefined | string   | [Click](#placeholder)   |
+| label         | no       | undefined | string   | [Click](#label)         |
+| offset        | no       | undefined | Object   | [Click](#offset)        |
+| isDisabled    | no       | false     | boolean  | [Click](#isDisabled)    |
+| isClearable   | no       | false     | boolean  | [Click](#isClearable)   |
+| isSearchable  | no       | false     | boolean  | [Click](#isSearchable)  |
+| isForcedOpen  | no       | false     | boolean  | [Click](#isForcedOpen)  |
+| isRequired    | no       | false     | boolean  | [Click](#isRequired)    |
+| closeOnSelect | no       | true      | boolean  | [Click](#closeOnSelect) |
+| onChange      | no       | undefined | function | [Click](#onchange)      |
+| onClose       | no       | undefined | function | [Click](#onclose)       |
+| onCreate      | no       | undefined | function | [Click](#oncreate)      |
+| onFocus       | no       | undefined | function | [Click](#onfocus)       |
+| onOpen        | no       | undefined | function | [Click](#onopen)        |
+| onSelect      | no       | undefined | function | [Click](#onselect)      |
 
 ## Props Examples
 
@@ -219,6 +221,14 @@ const customOffset = {
 
 ```js
 <Select id="id" options={options} isRequired />
+```
+
+### closeOnSelect
+
+`closeOnSelect` tell that the menu is closed or not when an item is selected
+
+```js
+<Select id="id" options={options} closeOnSelect={false} />
 ```
 
 ### onChange
