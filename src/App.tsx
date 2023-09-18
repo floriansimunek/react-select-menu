@@ -38,6 +38,7 @@ function App() {
       label="Label"
       isClearable
       isSearchable
+      isRequired
     />
   );
 }

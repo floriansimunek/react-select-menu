@@ -23,6 +23,7 @@ const Select: React.FC<SelectProps> = ({
   isClearable = false,
   isSearchable = false,
   isForcedOpen = false,
+  isRequired = false,
   onChange,
   onClose,
   onCreate,
@@ -173,6 +174,7 @@ const Select: React.FC<SelectProps> = ({
           style={{ ...style?.input }}
           isDisabled={isDisabled}
           isSearchable={isSearchable}
+          isRequired={isRequired}
         />
         <div className="select__menu--indicators">
           {isClearable && !!selected && (
