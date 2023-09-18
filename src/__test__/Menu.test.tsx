@@ -25,6 +25,30 @@ describe('SelectMenu', () => {
       act(() => document.body.click());
       expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('false');
     });
+
+    it('should close the menu on item click if closeOnSelect is true', () => {
+      render(<Select id="id" options={options} />);
+      const selectMenu = screen.getByTestId('select__menu');
+      const input = screen.getByTestId('select__menu--input');
+      const item = screen.getAllByTestId('select__menu--item')[0];
+      expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('false');
+      act(() => input.click());
+      expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('true');
+      act(() => item.click());
+      expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('false');
+    });
+
+    it('should not close the menu on item click if closeOnSelect is false', () => {
+      render(<Select id="id" options={options} closeOnSelect={false} />);
+      const selectMenu = screen.getByTestId('select__menu');
+      const input = screen.getByTestId('select__menu--input');
+      const item = screen.getAllByTestId('select__menu--item')[0];
+      expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('false');
+      act(() => input.click());
+      expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('true');
+      act(() => item.click());
+      expect(selectMenu.getAttribute('data-rsm-is-open')).toEqual('true');
+    });
   });
 
   describe('When menu has offset prop', () => {

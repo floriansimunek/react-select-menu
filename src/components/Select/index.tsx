@@ -24,6 +24,7 @@ const Select: React.FC<SelectProps> = ({
   isSearchable = false,
   isForcedOpen = false,
   isRequired = false,
+  closeOnSelect = true,
   onChange,
   onClose,
   onCreate,
@@ -101,7 +102,9 @@ const Select: React.FC<SelectProps> = ({
   const handleItemClick = (option: Option) => {
     if (!option.isDisabled) {
       setSelected(option.value);
-      isForcedOpen ? setIsOpen(isForcedOpen) : setIsOpen(false);
+      isForcedOpen
+        ? setIsOpen(isForcedOpen)
+        : closeOnSelect && setIsOpen(false);
     }
   };
 
