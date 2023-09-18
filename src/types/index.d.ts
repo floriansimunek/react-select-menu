@@ -19,6 +19,7 @@ export type InputProps = {
   style?: CSSProperties;
   isDisabled?: boolean;
   isSearchable?: boolean;
+  isRequired?: boolean;
 };
 
 export type LabelProps = {
@@ -49,6 +50,7 @@ export type SelectProps = {
   isClearable?: boolean;
   isSearchable?: boolean;
   isForcedOpen?: boolean;
+  isRequired?: boolean;
   onChange?: () => void;
   onClose?: () => void;
   onCreate?: () => void;
