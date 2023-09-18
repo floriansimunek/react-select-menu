@@ -36,6 +36,14 @@ describe('SelectMenu', () => {
     });
   });
 
+  describe('When SelectMenu has isRequired prop', () => {
+    it('should require the input', () => {
+      render(<Select id="id" options={options} isRequired />);
+      const input = screen.getByTestId('select__menu--input');
+      expect(input).toBeRequired();
+    });
+  });
+
   describe('When SelectMenu has placeholder prop', () => {
     it('should add placeholder to the input', () => {
       render(<Select id="id" options={options} placeholder="Test" />);

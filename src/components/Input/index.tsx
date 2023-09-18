@@ -9,6 +9,7 @@ const Input: React.FC<InputProps> = ({
   style,
   isDisabled,
   isSearchable,
+  isRequired,
 }) => {
   return (
     <input
@@ -22,6 +23,7 @@ const Input: React.FC<InputProps> = ({
       style={{ ...style }}
       readOnly={!isSearchable}
       disabled={isDisabled}
+      required={isRequired}
     />
   );
 };

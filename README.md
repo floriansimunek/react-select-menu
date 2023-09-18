@@ -213,6 +213,14 @@ const customOffset = {
 <Select id="id" options={options} isForcedOpen />
 ```
 
+### isRequired
+
+`isRequired` tell that the input value is required
+
+```js
+<Select id="id" options={options} isRequired />
+```
+
 ### onChange
 
 `onChange` trigger when input value change
