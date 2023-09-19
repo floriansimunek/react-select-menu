@@ -1,12 +1,14 @@
-# React Select-Menu
+# React Select Menu
 
-Simple Select-Menu working with React
+Simple Select Menu working with React
 
 - [Installation](#installation)
 - [Usage/Examples](#usageexamples)
+- [Report a bug](#report-a-bug)
+- [Request a feature](#request-a-feature)
 - Data Formats
-  - [Option Format](#option-format)
-  - [Group Format](#group-format)
+  - [Option](#option-format)
+  - [Group](#group-format)
 - [Props](#props)
   - [Examples](#props-examples)
 
@@ -17,6 +19,18 @@ Install react-select-menu with npm
 ```bash
 npm i @fsmnk/react-select-menu
 ```
+
+[Back to top](#react-select-menu)
+
+### Report a bug
+
+Report a bug : [here](https://github.com/floriansimunek/react-select-menu/issues/new/choose)
+
+[Back to top](#react-select-menu)
+
+### Request a feature
+
+Request a feature : [here](https://github.com/floriansimunek/react-select-menu/issues/new/choose)
 
 [Back to top](#react-select-menu)
 
