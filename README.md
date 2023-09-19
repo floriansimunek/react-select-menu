@@ -1,11 +1,11 @@
-# React Select-Menu
+# React Select Menu
 
-Simple Select-Menu working with React
+Simple Select Menu working with React
 
 - [Installation](#installation)
 - [Usage/Examples](#usageexamples)
-- [Report a bug](#reportabug)
-- [Request a feature](#requestafeature)
+- [Report a bug](#report-a-bug)
+- [Request a feature](#request-a-feature)
 - Data Formats
   - [Option](#option-format)
   - [Group](#group-format)
@@ -20,19 +20,19 @@ Install react-select-menu with npm
 npm i @fsmnk/react-select-menu
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### Report a bug
 
 Report a bug : [here](https://github.com/floriansimunek/react-select-menu/issues/new/choose)
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### Request a feature
 
 Request a feature : [here](https://github.com/floriansimunek/react-select-menu/issues/new/choose)
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ## Usage/Examples
 
@@ -62,7 +62,7 @@ function App() {
 }
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ## Option format
 
@@ -74,7 +74,7 @@ function App() {
 }
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ## Group format
 
@@ -85,7 +85,7 @@ function App() {
 }
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ## Props
 
@@ -112,7 +112,7 @@ function App() {
 | onOpen        | no       | undefined | function | [Click](#onopen)        |
 | onSelect      | no       | undefined | function | [Click](#onselect)      |
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ## Props Examples
 
@@ -124,7 +124,7 @@ function App() {
 <Select id="example-id" options={options} />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### options
 
@@ -140,7 +140,7 @@ const options = [
 <Select id="id" options={options} />;
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### className
 
@@ -150,7 +150,7 @@ const options = [
 <Select id="id" options={options} className="class1 class2 class3" />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### style
 
@@ -178,7 +178,7 @@ const customStyle = {
 <Select id="id" options={options} style={customStyle} />;
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### defaultValue
 
@@ -194,7 +194,7 @@ const options = [
 <Select id="id" options={options} defaultValue={options[0].value} />;
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### placeholder
 
@@ -204,7 +204,7 @@ const options = [
 <Select id="id" options={options} placeholder="Placeholder example" />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### label
 
@@ -214,7 +214,7 @@ const options = [
 <Select id="id" options={options} label="Label example" />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### offset
 
@@ -229,7 +229,7 @@ const customOffset = {
 <Select id="id" options={options} placeholder="Placeholder example" />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### isDisabled
 
@@ -239,7 +239,7 @@ const customOffset = {
 <Select id="id" options={options} isDisabled />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### isClearable
 
@@ -249,7 +249,7 @@ const customOffset = {
 <Select id="id" options={options} isClearable />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### isSearchable
 
@@ -259,7 +259,7 @@ const customOffset = {
 <Select id="id" options={options} isSearchable />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### isForcedOpen
 
@@ -269,7 +269,7 @@ const customOffset = {
 <Select id="id" options={options} isForcedOpen />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### isRequired
 
@@ -279,7 +279,7 @@ const customOffset = {
 <Select id="id" options={options} isRequired />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### closeOnSelect
 
@@ -289,7 +289,7 @@ const customOffset = {
 <Select id="id" options={options} closeOnSelect={false} />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### onChange
 
@@ -299,7 +299,7 @@ const customOffset = {
 <Select id="id" options={options} onChange={() => console.log('onChange')} />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### onClose
 
@@ -309,7 +309,7 @@ const customOffset = {
 <Select id="id" options={options} onClose={() => console.log('onClose')} />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### onCreate
 
@@ -319,7 +319,7 @@ const customOffset = {
 <Select id="id" options={options} onCreate={() => console.log('onCreate')} />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### onFocus
 
@@ -329,7 +329,7 @@ const customOffset = {
 <Select id="id" options={options} onFocus={() => console.log('onFocus')} />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### onOpen
 
@@ -339,7 +339,7 @@ const customOffset = {
 <Select id="id" options={options} onOpen={() => console.log('onOpen')} />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
 
 ### onSelect
 
@@ -349,4 +349,4 @@ const customOffset = {
 <Select id="id" options={options} onSelect={() => console.log('onSelect')} />
 ```
 
-[Back to top](#reactselect-menu)
+[Back to top](#react-select-menu)
