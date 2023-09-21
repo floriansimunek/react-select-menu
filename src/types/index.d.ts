@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react';
+
 export type ItemProps = {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   option: Option;
@@ -24,6 +26,7 @@ export type InputProps = {
 export type LabelProps = {
   children: string;
   htmlFor: string;
+  style?: CSSProperties;
 };
 
 export type GLabelProps = {
@@ -36,6 +39,7 @@ export type SelectProps = {
   className?: string;
   style?: {
     select?: CSSProperties;
+    label?: CSSProperties;
     input?: CSSProperties;
     menu?: CSSProperties;
     list?: CSSProperties;
