@@ -146,7 +146,11 @@ const Select: React.FC<SelectProps> = ({
       data-testid="select__menu"
       style={{ ...style?.select }}
     >
-      {label && <Label htmlFor={'rsm-' + id}>{label}</Label>}
+      {label && (
+        <Label htmlFor={'rsm-' + id} style={{ ...style?.label }}>
+          {label}
+        </Label>
+      )}
       <div
         className="select__menu--container"
         tabIndex={0}
