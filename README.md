@@ -98,6 +98,7 @@ function App() {
 | defaultValue  | no       | undefined | string   | [Click](#defaultvalue)  |
 | placeholder   | no       | undefined | string   | [Click](#placeholder)   |
 | label         | no       | undefined | string   | [Click](#label)         |
+| zIndex        | no       | 1         | number   | [Click](#zIndex)        |
 | offset        | no       | undefined | Object   | [Click](#offset)        |
 | isDisabled    | no       | false     | boolean  | [Click](#isDisabled)    |
 | isClearable   | no       | false     | boolean  | [Click](#isClearable)   |
@@ -227,6 +228,16 @@ const customOffset = {
 }
 
 <Select id="id" options={options} placeholder="Placeholder example" />
+```
+
+[Back to top](#react-select-menu)
+
+### zIndex
+
+`zIndex` is the z-index of the component
+
+```js
+<Select id="id" options={options} zIndex={10} />
 ```
 
 [Back to top](#react-select-menu)

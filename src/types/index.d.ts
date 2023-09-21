@@ -49,6 +49,7 @@ export type SelectProps = {
   placeholder?: string;
   label?: string;
   offset?: { top?: number; left?: number };
+  zIndex?: number;
   isDisabled?: boolean;
   isClearable?: boolean;
   isSearchable?: boolean;
