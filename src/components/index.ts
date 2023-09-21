@@ -1,15 +1,5 @@
 /* TYPES */
-export type {
-  CloseIconProps,
-  GLabelProps,
-  Group,
-  InputProps,
-  ItemProps,
-  LabelProps,
-  MenuProps,
-  Option,
-  SelectProps,
-} from '@types';
+export * from '@types';
 
 /* COMPONENTS */
 export { default as chevronIcon } from '@components/ChevronIcon';
