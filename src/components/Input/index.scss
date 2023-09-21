@@ -5,6 +5,7 @@ div.select__menu {
     font-size: 1rem;
     color: var(--rsm-darkgray);
     border: none;
+    background-color: transparent;
 
     &:focus {
       outline: none;

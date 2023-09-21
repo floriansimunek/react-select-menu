@@ -160,6 +160,7 @@ const Select: React.FC<SelectProps> = ({
           }
         }}
         onFocus={() => setIsFocused(true)}
+        style={{ ...style?.input }}
       >
         <Input
           id={'rsm-' + id}
@@ -174,7 +175,6 @@ const Select: React.FC<SelectProps> = ({
             }
             onChange && onChange();
           }}
-          style={{ ...style?.input }}
           isDisabled={isDisabled}
           isSearchable={isSearchable}
           isRequired={isRequired}
