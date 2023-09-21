@@ -5,6 +5,7 @@ div.select__menu {
   color: var(--rsm-darkgray);
   position: relative;
   user-select: none;
+  z-index: var(--zIndex);
 
   ul {
     list-style: none;

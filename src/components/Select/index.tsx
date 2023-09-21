@@ -19,6 +19,7 @@ const Select: React.FC<SelectProps> = ({
   placeholder,
   label,
   offset,
+  zIndex = 1,
   isDisabled = false,
   isClearable = false,
   isSearchable = false,
@@ -144,7 +145,7 @@ const Select: React.FC<SelectProps> = ({
       className={`select__menu ${className}`}
       data-rsm-is-open={isOpen}
       data-testid="select__menu"
-      style={{ ...style?.select }}
+      style={{ ...style?.select, '--zIndex': zIndex } as React.CSSProperties}
     >
       {label && (
         <Label htmlFor={'rsm-' + id} style={{ ...style?.label }}>
