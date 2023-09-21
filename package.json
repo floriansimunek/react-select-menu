@@ -42,8 +42,14 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/react-select-menu.es.js",
-      "require": "./dist/react-select-menu.umd.js"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/react-select-menu.es.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/react-select-menu.umd.js"
+      }
     },
     "./dist/style.css": "./dist/style.css"
   },
