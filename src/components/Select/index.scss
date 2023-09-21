@@ -17,6 +17,7 @@ div.select__menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: white;
 
     &[data-rsm-is-focused='true'] {
       outline: 1px solid var(--rsm-primary-color);
