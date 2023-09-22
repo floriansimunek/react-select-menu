@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  check_if_release_is_possible:
+  create_release_if_possible:
     runs-on: ubuntu-latest
 
     steps:
@@ -34,13 +34,9 @@ jobs:
         id: checkTag
         with: 
           tag: ${{ steps.package-version.outputs.current-version}}
-
-  create_release_if_possible:
-    runs-on: ubuntu-latest
-    if: ${{ needs.check_if_release_is_possible.outputs.checkTag == 'false' }}
-
-    steps:
+          
       - name: Create Release if Tag is new
+        if: ${{ steps.checkTag.outputs.exists == 'false' }}
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -49,4 +45,4 @@ jobs:
           tag_name: ${{ steps.package-version.outputs.current-version}}
           release_name: v${{ steps.package-version.outputs.current-version}}
           draft: false
-          prerelease: false  
+          prerelease: false
