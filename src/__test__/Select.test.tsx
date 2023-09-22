@@ -106,9 +106,9 @@ describe('SelectMenu', () => {
       expect(selectMenu).toHaveStyle('color: red');
     });
 
-    it('it should add style to input', () => {
-      const input = screen.getByTestId('select__menu--input');
-      expect(input).toHaveStyle('color: blue');
+    it('it should add style to container', () => {
+      const container = screen.getByTestId('select__menu--container');
+      expect(container).toHaveStyle('color: blue');
     });
 
     it('it should add style to menu', () => {
