@@ -37,7 +37,7 @@ jobs:
 
   create_release_if_possible:
     runs-on: ubuntu-latest
-    if: steps.checkTag.outputs.exists == 'false'
+    if: ${{ needs.check_if_release_is_possible.outputs.checkTag == 'false' }}
 
     steps:
       - name: Create Release if Tag is new
