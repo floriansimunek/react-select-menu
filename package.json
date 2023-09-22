@@ -1,6 +1,6 @@
 {
   "name": "@fsmnk/react-select-menu",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -42,8 +42,14 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/react-select-menu.es.js",
-      "require": "./dist/react-select-menu.umd.js"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/react-select-menu.es.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/react-select-menu.umd.js"
+      }
     },
     "./dist/style.css": "./dist/style.css"
   },
