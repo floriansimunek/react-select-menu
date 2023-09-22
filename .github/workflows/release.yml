@@ -46,3 +46,8 @@ jobs:
           release_name: v${{ steps.package-version.outputs.current-version}}
           draft: false
           prerelease: false
+
+      - name: Publish on NPM
+        run: npm publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
