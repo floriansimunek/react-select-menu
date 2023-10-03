@@ -1,5 +1,11 @@
 import { CloseIconProps } from '@types';
 
+/**
+ * React component that represents a close icon
+ * @param onClick onClick event handler
+ * @component
+ * @returns {JSX.Element}
+ */
 const closeIcon: React.FC<CloseIconProps> = ({ onClick }) => {
   return (
     <div className="select__menu--icon-container" onClick={onClick}>

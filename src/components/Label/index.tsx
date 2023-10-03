@@ -1,5 +1,13 @@
 import { LabelProps } from '@types';
 
+/**
+ * Label component
+ * @param {string} children Label value
+ * @param {string} htmlFor used to connect to input
+ * @param style styles properties
+ * @component
+ * @returns {JSX.Element}
+ */
 const Label: React.FC<LabelProps> = ({ children, htmlFor, style }) => {
   return (
     <label
