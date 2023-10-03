@@ -1,3 +1,8 @@
+/**
+ * React component that represents a chevron icon
+ * @component
+ * @returns {JSX.Element}
+ */
 const chevronIcon: React.FC = () => {
   return (
     <div className="select__menu--icon-container">
