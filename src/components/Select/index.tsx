@@ -10,6 +10,32 @@ import { useEffect, useState } from 'react';
 import './index.scss';
 import '../index.css';
 
+/**
+ * Select component to create a drop-down list with options.
+ * @param {string} id - The unique identifier of the component.
+ * @param {Array.<Option | Group>} options - The options to display in the drop-down list.
+ * @param {Object} style - Custom CSS styles for the component.
+ * @param {string} className - The additional CSS classes to apply to the component.
+ * @param {string} defaultValue - The default value of the drop-down list.
+ * @param {string} placeholder - The text of the placeholder indicator.
+ * @param {string} label - The label associated with the drop-down list.
+ * @param {number} offset - The offset of the menu relative to the drop-down list.
+ * @param {number} zIndex - The depth index of the component.
+ * @param {boolean} isDisabled - Indicates whether the drop-down list is disabled.
+ * @param {boolean} isClearable - Indicates whether the clear option is enabled.
+ * @param {boolean} isSearchable - Indicates whether search options are enabled.
+ * @param {boolean} isForcedOpen - Indicates whether the drop-down list should be permanently open.
+ * @param {boolean} isRequired - Indicates whether selection of an option is required.
+ * @param {boolean} closeOnSelect - Indicates whether the list should be closed after an option is selected.
+ * @param {function} onChange - The callback function called when an option is changed.
+ * @param {function} onClose - The callback function called when the list closes.
+ * @param {function} onCreate - The callback function called when creating the list.
+ * @param {function} onFocus - The callback function called when an element gets focus.
+ * @param {function} onOpen - The callback function called when the list expands.
+ * @param {function} onSelect - The callback function called when an option is selected.
+ * @component
+ * @returns {JSX.Element} - The Select component.
+ */
 const Select: React.FC<SelectProps> = ({
   id,
   options,
@@ -71,6 +97,11 @@ const Select: React.FC<SelectProps> = ({
     }
   }, [isFocused, onFocus]);
 
+  /**
+   * Function to render the list of options.
+   * @param {Array.<Option | Group>} options - The options to display.
+   * @returns {JSX.Element} - The rendered options list.
+   */
   const renderList = (options: (Option | Group)[]) => {
     return options.map((option) => {
       if (option && 'options' in option) {
@@ -86,6 +117,11 @@ const Select: React.FC<SelectProps> = ({
     });
   };
 
+  /**
+   * Function to render an option element.
+   * @param {Option} option - The option to display.
+   * @returns {JSX.Element} - The returned option element.
+   */
   const renderItem = (option: Option) => {
     return (
       <Item
@@ -100,6 +136,10 @@ const Select: React.FC<SelectProps> = ({
     );
   };
 
+  /**
+   * Function to manage the click on an option.
+   * @param {Option} option - The selected option.
+   */
   const handleItemClick = (option: Option) => {
     if (!option.isDisabled) {
       setSelected(option.value);
@@ -109,6 +149,10 @@ const Select: React.FC<SelectProps> = ({
     }
   };
 
+  /**
+   * Function to filter options based on search value.
+   * @param {string} inputValue - The search value.
+   */
   const filterOptions = (inputValue: string) => {
     const filtered = options
       .map((option) => {
