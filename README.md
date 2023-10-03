@@ -227,7 +227,7 @@ const customOffset = {
     left: 100, // in px
 }
 
-<Select id="id" options={options} placeholder="Placeholder example" />
+<Select id="id" options={options} offset={customOffset} />
 ```
 
 [Back to top](#react-select-menu)
