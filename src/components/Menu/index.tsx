@@ -1,6 +1,15 @@
 import { MenuProps } from '@types';
 import './index.scss';
 
+/**
+ * Menu component - render the options prop of the Select component
+ * @param children Menu items or group
+ * @param offset offset position of the menu
+ * @param menuStyle style properties
+ * @param listStyle style properties
+ * @component
+ * @returns {JSX.Element}
+ */
 const Menu: React.FC<MenuProps> = ({
   children,
   offset = { top: 0, left: 0 },
